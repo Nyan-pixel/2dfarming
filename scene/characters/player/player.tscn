@@ -407,7 +407,7 @@ script = ExtResource("1_v7krq")
 position = Vector2(9.536743e-07, -9)
 scale = Vector2(0.29850262, 0.28580728)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"idle_right"
+animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
