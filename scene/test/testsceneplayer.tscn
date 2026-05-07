@@ -27,6 +27,11 @@ texture = ExtResource("3_xh1ls")
 6:3/0 = 0
 8:2/size_in_atlas = Vector2i(1, 2)
 8:2/0 = 0
+4:3/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_oa3m5"]
 sources/0 = SubResource("TileSetAtlasSource_i1t3w")
@@ -51,7 +56,7 @@ tile_map_data = PackedByteArray("AAAYAAsAAgABAAEAAAAYAAoAAgABAAEAAAAYAAkAAgABAAE
 tile_set = ExtResource("1_knph0")
 
 [node name="Tree" type="TileMapLayer" parent="gametilemaps"]
-tile_map_data = PackedByteArray("AAAPAAoAAQAHAAIAAAAMAA0AAQAIAAIAAAANAAcAAQAHAAAAAAAVABEAAQAIAAAAAAAhABAAAQAFAAQAAAA=")
+tile_map_data = PackedByteArray("AAAPAAoAAQAHAAIAAAAMAA0AAQAIAAIAAAANAAcAAQAHAAAAAAAVABEAAQAIAAAAAAAhABAAAQAFAAQAAAAQAA4AAQAIAAIAAAAXABAAAQAFAAIAAAARAAwAAQAFAAIAAAASAA4AAQAEAAMAAAAOAA0AAQAEAAMAAAANAAsAAQAEAAMAAAA=")
 tile_set = SubResource("TileSet_oa3m5")
 
 [node name="Player" parent="." instance=ExtResource("2_l0nwc")]
