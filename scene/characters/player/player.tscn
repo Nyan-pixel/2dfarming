@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://baobhkkvmt1nd"]
+[gd_scene load_steps=59 format=3 uid="uid://baobhkkvmt1nd"]
 
 [ext_resource type="Script" uid="uid://uyqo7sfb2quo" path="res://scene/characters/player/player.gd" id="1_v7krq"]
 [ext_resource type="Texture2D" uid="uid://b83aii8vlhbod" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_viwsh"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cppkge7d6lbqg" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
 [ext_resource type="Script" uid="uid://ct657u58fpc7l" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
 [ext_resource type="Script" uid="uid://bp8fysclugakr" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
+[ext_resource type="PackedScene" uid="uid://b6vh4iwotuhyt" path="res://scene/components/hit_component.tscn" id="12_a6bj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glldc"]
 atlas = ExtResource("1_viwsh")
@@ -322,7 +323,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m1awt")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_back",
 "speed": 5.0
 }, {
@@ -339,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdec8")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_front",
 "speed": 5.0
 }, {
@@ -356,7 +357,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_taf0p")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -373,7 +374,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tbux8")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_right",
 "speed": 5.0
 }, {
@@ -425,6 +426,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_stjjq"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gxq7"]
+radius = 4.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_v7krq")
 current_tool = 2
@@ -433,10 +437,8 @@ current_tool = 2
 position = Vector2(2.9802322e-08, -8)
 scale = Vector2(0.18129079, 0.09941375)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"watering_right"
+animation = &"walk_right"
 autoplay = "idle_front"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
@@ -457,10 +459,11 @@ script = ExtResource("5_vj7nq")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D")]
+[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D", "hit_component_collision_shape")]
 script = ExtResource("7_8nhx4")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Tilling" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D")]
 script = ExtResource("8_wf2u3")
@@ -471,3 +474,10 @@ animated_sprite_2D = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_efkcd")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+
+[node name="HitComponent" parent="." instance=ExtResource("12_a6bj1")]
+
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(13, -3)
+shape = SubResource("CircleShape2D_8gxq7")
+debug_color = Color(0.86626303, 0.35308886, 0.10906728, 0.41960785)
