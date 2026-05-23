@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://dhheyesq1lvuw"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://dhheyesq1lvuw"]
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_vkkoh"]
 [ext_resource type="Texture2D" uid="uid://ckq8gani2t1q2" path="res://assets/game/Tilesets/Grass.png" id="2_u10in"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dl3f2a7lj1oxr" path="res://assets/game/Characters/grass_tileset.png" id="5_su1mb"]
 [ext_resource type="Texture2D" uid="uid://civg4xdnfm3rx" path="res://assets/game/Objects/Grassa.png" id="6_yihm3"]
 [ext_resource type="PackedScene" uid="uid://buv337t37jnf" path="res://scene/objects/trees/small_tree.tscn" id="7_tppug"]
+[ext_resource type="PackedScene" uid="uid://wbuyha341plb" path="res://scene/objects/rocks/rock.tscn" id="8_dputo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u10in"]
 texture = ExtResource("1_vkkoh")
@@ -572,6 +573,7 @@ texture = ExtResource("6_yihm3")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dputo"]
 scenes/1/scene = ExtResource("7_tppug")
+scenes/2/scene = ExtResource("8_dputo")
 
 [resource]
 physics_layer_0/collision_layer = 1
