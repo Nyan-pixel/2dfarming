@@ -28,6 +28,15 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
+window/layer_1="Chicken Nav"
+
+[file_customization]
+
+folder_colors={
+"res://scene/": "yellow",
+"res://scripts/": "red",
+"res://tilesets/": "green"
+}
 
 [input]
 
@@ -65,6 +74,7 @@ hit={
 [layer_names]
 
 2d_physics/layer_1="Ground"
+2d_navigation/layer_1="Chicken Navigation"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="Tool"
