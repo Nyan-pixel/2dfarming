@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2muggmejlwxp"]
+
+[ext_resource type="PackedScene" uid="uid://drd8k2inanni1" path="res://scene/test/test_tilemap_1.tscn" id="1_7ii46"]
+[ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="2_7ii46"]
+[ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="3_dfs20"]
+
+[node name="testscenetilemaps" type="Node2D"]
+
+[node name="gametilemap1" parent="." instance=ExtResource("1_7ii46")]
+
+[node name="Player" parent="." instance=ExtResource("2_7ii46")]
+position = Vector2(224, 169)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="GameScreen" parent="." instance=ExtResource("3_dfs20")]
