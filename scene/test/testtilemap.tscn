@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="3_dfs20"]
 
 [node name="testscenetilemaps" type="Node2D"]
+y_sort_enabled = true
 
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("1_jwgbj")]
 initial_hour = 8
 initial_minute = 0
 
 [node name="gametilemap1" parent="." instance=ExtResource("1_7ii46")]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_7ii46")]
 position = Vector2(224, 169)
