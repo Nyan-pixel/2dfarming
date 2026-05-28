@@ -398,6 +398,7 @@ texture_region_size = Vector2i(128, 105)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 12
 
 [sub_resource type="TileSet" id="TileSet_ogb7k"]
 tile_size = Vector2i(64, 64)
@@ -417,6 +418,7 @@ texture_region_size = Vector2i(128, 112)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 7
 
 [sub_resource type="TileSet" id="TileSet_21huw"]
 tile_size = Vector2i(64, 64)
@@ -436,6 +438,7 @@ texture_region_size = Vector2i(128, 128)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 4
 
 [sub_resource type="TileSet" id="TileSet_obfi0"]
 tile_size = Vector2i(64, 64)
@@ -455,6 +458,7 @@ texture_region_size = Vector2i(128, 128)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 5
 
 [sub_resource type="TileSet" id="TileSet_lg7at"]
 tile_size = Vector2i(64, 64)
@@ -474,9 +478,12 @@ texture_region_size = Vector2i(192, 256)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 81
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-19.5, 85, 21.5, 84, 20.5, 105.5, -20, 106)
 
 [sub_resource type="TileSet" id="TileSet_eal5j"]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2y2am")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42nv2"]
@@ -493,9 +500,12 @@ texture_region_size = Vector2i(192, 256)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 83
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-18, 89.5, 17, 89, 16.5, 111.5, -17.5, 112)
 
 [sub_resource type="TileSet" id="TileSet_whw3x"]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_42nv2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cx234"]
@@ -512,9 +522,12 @@ texture_region_size = Vector2i(192, 192)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 36
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 38.5, 9, 40, 8.5, 68.5, -8.5, 67.5)
 
 [sub_resource type="TileSet" id="TileSet_1dqwo"]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cx234")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkofk"]
@@ -576,8 +589,11 @@ texture_region_size = Vector2i(192, 192)
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
+0:0/0/y_sort_origin = 44
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, 42.5, 9, 42.5, 8.5, 64.5, -6.5, 65.5)
 
 [sub_resource type="TileSet" id="TileSet_qr82v"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mjh27")
 
 [node name="gametilemap1" type="Node2D"]
@@ -622,29 +638,34 @@ tile_map_data = PackedByteArray("AAAEAAcAAAAAAAAAAGAFAAcAAAAAAAEAAGAGAAcAAAAAAAI
 tile_set = SubResource("TileSet_5k64f")
 
 [node name="bush1" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 position = Vector2(-2, -2)
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAADAAYAAAAAAAAAAAAHAAQAAAAAAAAAAAAJAAYAAAAAAAAAAAANAAMAAAAAAAAAAAAFAAoAAAAAAAAAAAABAA0AAAAAAAAAAAD//wgAAAAAAAAAAAAHABAAAAAAAAAAAAAPAA8AAAAAAAAAAAASAA4AAAAAAAAAAAAeABAAAAAAAAAAAAAcAAoAAAAAAAAAAAAfAAsAAAAAAAAAAAAaAAUAAAAAAAAAAAAZAAQAAAAAAAAAAAAXAAMAAAAAAAAAAAAVAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAD//wEAAAAAAAAAAAAfAAMAAAAAAAAAAAAaABEAAAAAAAAAAAAZABEAAAAAAAAAAAATABAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ogb7k")
 
 [node name="bush2" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAEAAoAAAAAAAAAAAABAA0AAAAAAAAAAAAFAAoAAAAAAAAAAAD//wgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAcAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAMAAIAAAAAAAAAAAALAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAEAAAAAAAAAAAAYAAQAAAAAAAAAAAAZAAMAAAAAAAAAAAAcAAUAAAAAAAAAAAAeAAMAAAAAAAAAAAAcAAoAAAAAAAAAAAAdAAoAAAAAAAAAAAAfAAkAAAAAAAAAAAAdAAgAAAAAAAAAAAAeAAsAAAAAAAAAAAAdAA8AAAAAAAAAAAAeABEAAAAAAAAAAAAZABEAAAAAAAAAAAATAA8AAAAAAAAAAAARAA4AAAAAAAAAAAAJABAAAAAAAAAAAAAKAA8AAAAAAAAAAAAHABAAAAAAAAAAAAAEABAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_21huw")
 
 [node name="bush3" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 position = Vector2(1, 2)
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAKABAAAAAAAAAAAAACAA0AAAAAAAAAAAADAAkAAAAAAAAAAAAAAAYAAAAAAAAAAAADAAUAAAAAAAAAAAAHAAMAAAAAAAAAAAADAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAIAAQAAAAAAAAAAAAWAAIAAAAAAAAAAAAYAAEAAAAAAAAAAAAbAAIAAAAAAAAAAAAdAAMAAAAAAAAAAAAdAAsAAAAAAAAAAAAdABEAAAAAAAAAAAANAA8AAAAAAAAAAAAQAA4AAAAAAAAAAAATABEAAAAAAAAAAAAfAA4AAAAAAAAAAAAfAAgAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_obfi0")
 
 [node name="bush4" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 3)
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAOAA8AAQAAAAAAAAAFABAAAQAAAAAAAAADAAoAAQAAAAAAAAD//wgAAQAAAAAAAAANAAEAAQAAAAAAAAAXAAIAAQAAAAAAAAAaAAQAAQAAAAAAAAAbAAUAAQAAAAAAAAAeAAYAAQAAAAAAAAAfAAoAAQAAAAAAAAAdAA4AAQAAAAAAAAAeAA8AAQAAAAAAAAAHAA4AAQAAAAAAAAAHAA8AAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_lg7at")
 
 [node name="tree1" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 position = Vector2(-4, -5)
 rotation = 0.00536608
 scale = Vector2(0.3, 0.3)
@@ -652,12 +673,14 @@ tile_map_data = PackedByteArray("AAADAP//AAAAAAAAAAABAAAAAAAAAAAAAAAHAAEAAAAAAAA
 tile_set = SubResource("TileSet_eal5j")
 
 [node name="tree2" type="TileMapLayer" parent="."]
-position = Vector2(0, -8)
+y_sort_enabled = true
+position = Vector2(-1, -8)
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAEAAAAAAAAAAAAAAAGAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAACAAkAAAAAAAAAAAAfAAUAAAAAAAAAAAAIAA8AAAAAAAAAAAAcAA4AAAAAAAAAAAAeAAkAAAAAAAAAAAACAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_whw3x")
 
 [node name="tree3" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 position = Vector2(5, 6)
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAADAA8AAAAAAAAAAAAIAAQAAAAAAAAAAAACAAAAAAAAAAAAAAD/////AAAAAAAAAAAaAAMAAAAAAAAAAAAeAA4AAAAAAAAAAAAcAAgAAAAAAAAAAAD//wYAAAAAAAAAAAAJAA4AAAAAAAAAAAAXAAEAAAAAAAAAAAAbAAQAAAAAAAAAAAAaAAEAAAAAAAAAAAA=")
@@ -669,6 +692,7 @@ position = Vector2(18, -3)
 tile_set = SubResource("TileSet_kidmw")
 
 [node name="tree4" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AABwAAoAAAAAAAAAAAB3ABYAAAAAAAAAAAALABcAAAAAAAAAAAARABMAAAAAAAAAAAAUAD0AAAAAAAAAAAAtAD0AAAAAAAAAAAAzAAgAAAAAAAAAAABkAAYAAAAAAAAAAABhAAoAAAAAAAAAAAAfAAsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_qr82v")
