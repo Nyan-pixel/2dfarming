@@ -1,16 +1,16 @@
 [gd_scene load_steps=59 format=3 uid="uid://baobhkkvmt1nd"]
 
-[ext_resource type="Script" path="res://scene/characters/player/player.gd" id="1_v7krq"]
+[ext_resource type="Script" uid="uid://uyqo7sfb2quo" path="res://scene/characters/player/player.gd" id="1_v7krq"]
 [ext_resource type="Texture2D" uid="uid://b83aii8vlhbod" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_viwsh"]
-[ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
+[ext_resource type="Script" uid="uid://btmsmosxakbw0" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
 [ext_resource type="Texture2D" uid="uid://cjsqmgl18uq2m" path="res://assets/game/Characters/player_tool_rightside_v2.png" id="4_tg3vd"]
 [ext_resource type="Texture2D" uid="uid://duxrxsol4cssk" path="res://assets/game/Characters/player_tool_rightside_v1.png" id="4_uy7wp"]
-[ext_resource type="Script" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
-[ext_resource type="Script" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
+[ext_resource type="Script" uid="uid://dn3yhesh7nvei" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
+[ext_resource type="Script" uid="uid://ba2xgwen4fgw5" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
 [ext_resource type="Texture2D" uid="uid://pap3hwwt30dt" path="res://assets/game/Characters/player_sprite_sheet_walk_v1.png" id="5_wf2u3"]
-[ext_resource type="Script" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
-[ext_resource type="Script" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
-[ext_resource type="Script" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
+[ext_resource type="Script" uid="uid://cppkge7d6lbqg" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
+[ext_resource type="Script" uid="uid://ct657u58fpc7l" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
+[ext_resource type="Script" uid="uid://bp8fysclugakr" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
 [ext_resource type="PackedScene" uid="uid://b6vh4iwotuhyt" path="res://scene/components/hit_component.tscn" id="12_a6bj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glldc"]
@@ -472,14 +472,15 @@ script = ExtResource("8_wf2u3")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
 
-[node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D")]
+[node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D", "hit_component_collision_shape")]
 script = ExtResource("9_efkcd")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="HitComponent" parent="." instance=ExtResource("12_a6bj1")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
-position = Vector2(13, -3)
+position = Vector2(13, -2)
 shape = SubResource("CircleShape2D_8gxq7")
 debug_color = Color(0.866263, 0.353089, 0.109067, 0.419608)
