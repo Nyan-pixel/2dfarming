@@ -29,6 +29,7 @@ scale = Vector2(0.23109245, 0.24210526)
 texture = SubResource("AtlasTexture_1e28k")
 region_rect = Rect2(0, 0, 16, 32)
 script = ExtResource("3_4teta")
+log_drop_amount = 10
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

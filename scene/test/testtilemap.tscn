@@ -26,6 +26,7 @@ y_sort_enabled = true
 [node name="Tree1" parent="gametilemap1" instance=ExtResource("5_sjh6q")]
 material = SubResource("ShaderMaterial_8np4a")
 position = Vector2(183.25, 135)
+log_drop_amount = 10
 
 [node name="Player" parent="." instance=ExtResource("2_7ii46")]
 position = Vector2(224, 169)
