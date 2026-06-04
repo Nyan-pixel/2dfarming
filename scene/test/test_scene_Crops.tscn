@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dpbx3f6gwn6cn"]
+[gd_scene load_steps=15 format=4 uid="uid://dpbx3f6gwn6cn"]
 
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="1_h1fko"]
 [ext_resource type="TileSet" uid="uid://dhheyesq1lvuw" path="res://tilesets/gametilesets.tres" id="2_cuapf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="6_gjclx"]
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="7_t8rvo"]
 [ext_resource type="PackedScene" uid="uid://b8alupsunti5" path="res://scene/objects/plants/corn.tscn" id="8_cuapf"]
+[ext_resource type="PackedScene" uid="uid://bucojib7x2bvp" path="res://scene/objects/plants/tomato.tscn" id="9_bte0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1t3w"]
 texture = ExtResource("3_bte0m")
@@ -99,3 +100,6 @@ position = Vector2(126, 168)
 
 [node name="Corn" parent="." instance=ExtResource("8_cuapf")]
 position = Vector2(349, 152)
+
+[node name="Tomato" parent="." instance=ExtResource("9_bte0m")]
+position = Vector2(377, 154)
