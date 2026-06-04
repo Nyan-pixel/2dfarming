@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjs7ccd5d4vie"]
+[gd_scene load_steps=14 format=3 uid="uid://bjs7ccd5d4vie"]
 
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="1_2m6x3"]
 [ext_resource type="PackedScene" uid="uid://drd8k2inanni1" path="res://scene/test/test_tilemap_1.tscn" id="2_pv7r2"]
@@ -8,12 +8,26 @@
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="6_a36wj"]
 [ext_resource type="PackedScene" uid="uid://bucojib7x2bvp" path="res://scene/objects/plants/tomato.tscn" id="7_netqu"]
 [ext_resource type="PackedScene" uid="uid://b8alupsunti5" path="res://scene/objects/plants/corn.tscn" id="8_cl6sg"]
+[ext_resource type="PackedScene" uid="uid://1dkjt1xi1b1k" path="res://scene/characters/cow/cow.tscn" id="9_cl6sg"]
+[ext_resource type="PackedScene" uid="uid://230kmok5s7ft" path="res://scene/characters/chicken/chicken.tscn" id="10_ftski"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8np4a"]
 resource_local_to_scene = true
 shader = ExtResource("4_cl6sg")
 shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_a36wj"]
+vertices = PackedVector2Array(531, 159.84375, 531, 203, 424, 203, 424, 158.15625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(414, 148, 541, 150, 541, 213, 414, 213)])
+source_geometry_mode = 2
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ftski"]
+vertices = PackedVector2Array(437.4375, 115.85156, 439.52344, 160.07031, 329.85156, 160.92188, 329.14844, 114.15625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(447, 106, 450, 170, 320, 171, 319, 104)])
+source_geometry_mode = 2
 
 [node name="testscenetilemaps" type="Node2D"]
 y_sort_enabled = true
@@ -24,6 +38,7 @@ initial_minute = 0
 
 [node name="gametilemap1" parent="." instance=ExtResource("2_pv7r2")]
 y_sort_enabled = true
+position = Vector2(22, -47)
 
 [node name="Tree1" parent="gametilemap1" instance=ExtResource("3_netqu")]
 material = SubResource("ShaderMaterial_8np4a")
@@ -41,10 +56,46 @@ current_tool = 0
 position = Vector2(300, 46)
 
 [node name="Tomato2" parent="." instance=ExtResource("7_netqu")]
-position = Vector2(334, 47)
+position = Vector2(323, 46)
 
 [node name="Corn" parent="." instance=ExtResource("8_cl6sg")]
 position = Vector2(299, 74)
 
 [node name="Corn2" parent="." instance=ExtResource("8_cl6sg")]
-position = Vector2(330, 73)
+position = Vector2(322, 74)
+
+[node name="Chickens" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
+navigation_polygon = SubResource("NavigationPolygon_a36wj")
+
+[node name="Chicken" parent="Chickens" instance=ExtResource("10_ftski")]
+position = Vector2(516, 171)
+
+[node name="Chicken2" parent="Chickens" instance=ExtResource("10_ftski")]
+position = Vector2(517, 201)
+
+[node name="Chicken3" parent="Chickens" instance=ExtResource("10_ftski")]
+position = Vector2(440, 204)
+
+[node name="Chicken4" parent="Chickens" instance=ExtResource("10_ftski")]
+position = Vector2(449, 174)
+
+[node name="Cows" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
+position = Vector2(93, 111)
+navigation_polygon = SubResource("NavigationPolygon_ftski")
+navigation_layers = 2
+
+[node name="Cow" parent="Cows" instance=ExtResource("9_cl6sg")]
+position = Vector2(448, 239)
+
+[node name="Cow2" parent="Cows" instance=ExtResource("9_cl6sg")]
+position = Vector2(518, 239)
+
+[node name="Cow3" parent="Cows" instance=ExtResource("9_cl6sg")]
+position = Vector2(519, 270)
+
+[node name="Cow4" parent="Cows" instance=ExtResource("9_cl6sg")]
+position = Vector2(447, 270)
