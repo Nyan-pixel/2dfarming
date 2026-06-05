@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbqqxdim5r3g2"
-path="res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"
+uid="uid://sep523hs007v"
+path="res://.godot/imported/Untitled designrrr.png-746659cd77eef397cfc430734b717532.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Objects/Basic_tools_and_meterials.png"
-dest_files=["res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"]
+source_file="res://assets/game/Characters/Untitled designrrr.png"
+dest_files=["res://.godot/imported/Untitled designrrr.png-746659cd77eef397cfc430734b717532.ctex"]
 
 [params]
 

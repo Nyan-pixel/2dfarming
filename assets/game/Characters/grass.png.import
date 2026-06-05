@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbqqxdim5r3g2"
-path="res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"
+uid="uid://d1pjn65v2mc1o"
+path="res://.godot/imported/grass.png-d1220759827a76a6967c480f952fab4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Objects/Basic_tools_and_meterials.png"
-dest_files=["res://.godot/imported/Basic_tools_and_meterials.png-dfe355595628e7d1e014c19e0016442b.ctex"]
+source_file="res://assets/game/Characters/grass.png"
+dest_files=["res://.godot/imported/grass.png-d1220759827a76a6967c480f952fab4e.ctex"]
 
 [params]
 
