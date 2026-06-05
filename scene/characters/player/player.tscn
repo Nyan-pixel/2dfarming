@@ -1,19 +1,19 @@
 [gd_scene load_steps=62 format=3 uid="uid://baobhkkvmt1nd"]
 
-[ext_resource type="Script" path="res://scene/characters/player/player.gd" id="1_v7krq"]
+[ext_resource type="Script" uid="uid://uyqo7sfb2quo" path="res://scene/characters/player/player.gd" id="1_v7krq"]
 [ext_resource type="Texture2D" uid="uid://b83aii8vlhbod" path="res://assets/game/Characters/Basic Charakter Actions.png" id="1_viwsh"]
 [ext_resource type="Texture2D" uid="uid://cdoabfgwo328b" path="res://assets/game/Characters/axev3.png" id="2_bx1cu"]
 [ext_resource type="Texture2D" uid="uid://mfp783askwx8" path="res://assets/game/Characters/axe_back_and_front.png" id="2_o7jhj"]
-[ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
+[ext_resource type="Script" uid="uid://btmsmosxakbw0" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
 [ext_resource type="Texture2D" uid="uid://bj2juiqyjf0jm" path="res://assets/game/Characters/axe_front_back_v2.png" id="3_sy7pk"]
 [ext_resource type="Texture2D" uid="uid://crlh11cj3ei8s" path="res://assets/game/Characters/axe_left_rignt_v2.png" id="4_ea7lo"]
 [ext_resource type="Texture2D" uid="uid://cjsqmgl18uq2m" path="res://assets/game/Characters/player_tool_rightside_v2.png" id="4_tg3vd"]
-[ext_resource type="Script" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
-[ext_resource type="Script" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
+[ext_resource type="Script" uid="uid://dn3yhesh7nvei" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
+[ext_resource type="Script" uid="uid://ba2xgwen4fgw5" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
 [ext_resource type="Texture2D" uid="uid://pap3hwwt30dt" path="res://assets/game/Characters/player_sprite_sheet_walk_v1.png" id="5_wf2u3"]
-[ext_resource type="Script" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
-[ext_resource type="Script" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
-[ext_resource type="Script" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
+[ext_resource type="Script" uid="uid://cppkge7d6lbqg" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
+[ext_resource type="Script" uid="uid://ct657u58fpc7l" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
+[ext_resource type="Script" uid="uid://bp8fysclugakr" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
 [ext_resource type="PackedScene" uid="uid://b6vh4iwotuhyt" path="res://scene/components/hit_component.tscn" id="12_a6bj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snheg"]
@@ -421,7 +421,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l1616")
 }],
-"loop": true,
+"loop": false,
 "name": &"watering_right",
 "speed": 3.0
 }]
