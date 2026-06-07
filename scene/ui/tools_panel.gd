@@ -42,6 +42,10 @@ func _on_global_tool_selected(active_tool: DataTypes.Tools) -> void:
 			tool_tilling.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.WaterCrops:
 			tool_watering.modulate = Color(1.5, 1.5, 1.5, 1.0)
+		DataTypes.Tools.PlantCorn:
+			corn.modulate = Color(1.5, 1.5, 1.5, 1.0)
+		DataTypes.Tools.PlantTomato:
+			tomato.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		# 💡 (Optional) If you add seed states to your tool enum later, add them here!
 		# DataTypes.Tools.PlantCorn:
 		#     corn.modulate = Color(1.5, 1.5, 1.5, 1.0)
@@ -58,9 +62,9 @@ func _on_watering_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 
 func _on_corn_pressed() -> void:
-	print("UI: Corn seed slot clicked")
+	ToolManager.select_tool(DataTypes.Tools.PlantCorn)
 	# If you want corn clicks to do something, assign its tool type here later!
 
 func _on_tomato_pressed() -> void:
-	print("UI: Tomato seed slot clicked")
+	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 	# If you want tomato clicks to do something, assign its tool type here later!
