@@ -700,7 +700,7 @@ texture = ExtResource("18_h04av")
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Fences"
-terrain_set_0/terrain_0/color = Color(0.68517786, 0.15757552, 0.1893844, 1)
+terrain_set_0/terrain_0/color = Color(0.685178, 0.157576, 0.189384, 1)
 sources/0 = SubResource("TileSetAtlasSource_r4ldt")
 
 [node name="gametilemap1" type="Node2D"]

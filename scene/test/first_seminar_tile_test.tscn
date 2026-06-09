@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="1_2m6x3"]
 [ext_resource type="PackedScene" uid="uid://drd8k2inanni1" path="res://scene/test/test_tilemap_1.tscn" id="2_pv7r2"]
 [ext_resource type="PackedScene" uid="uid://bajv637y4ujir" path="res://scene/objects/trees/tree_1.tscn" id="3_netqu"]
-[ext_resource type="Shader" uid="uid://ogdy8gnqtapr" path="res://scene/objects/trees/tree_shake.gdshader" id="4_cl6sg"]
+[ext_resource type="Shader" path="res://scene/objects/trees/tree_shake.gdshader" id="4_cl6sg"]
 [ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="5_ftski"]
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="6_a36wj"]
 [ext_resource type="PackedScene" uid="uid://bucojib7x2bvp" path="res://scene/objects/plants/tomato.tscn" id="7_netqu"]
@@ -24,7 +24,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(414, 148, 541, 150, 541
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ftski"]
-vertices = PackedVector2Array(436.84375, 115.84375, 436.14844, 160.07031, 329.85156, 160.92188, 329.14844, 114.15625)
+vertices = PackedVector2Array(436.844, 115.844, 436.148, 160.07, 329.852, 160.922, 329.148, 114.156)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(447, 106, 446, 170, 320, 171, 319, 104)])
 source_geometry_mode = 2
