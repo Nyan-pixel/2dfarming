@@ -1,20 +1,23 @@
-[gd_scene load_steps=67 format=3 uid="uid://baobhkkvmt1nd"]
+[gd_scene load_steps=82 format=3 uid="uid://baobhkkvmt1nd"]
 
-[ext_resource type="Script" path="res://scene/characters/player/player.gd" id="1_v7krq"]
+[ext_resource type="Script" uid="uid://uyqo7sfb2quo" path="res://scene/characters/player/player.gd" id="1_v7krq"]
 [ext_resource type="Texture2D" uid="uid://cdoabfgwo328b" path="res://assets/game/Characters/axev3.png" id="2_bx1cu"]
 [ext_resource type="Texture2D" uid="uid://mfp783askwx8" path="res://assets/game/Characters/axe_back_and_front.png" id="2_o7jhj"]
-[ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
+[ext_resource type="Script" uid="uid://btmsmosxakbw0" path="res://scripts/state_machine/node_state_machine.gd" id="3_glldc"]
 [ext_resource type="Texture2D" uid="uid://bj2juiqyjf0jm" path="res://assets/game/Characters/axe_front_back_v2.png" id="3_sy7pk"]
 [ext_resource type="Texture2D" uid="uid://crlh11cj3ei8s" path="res://assets/game/Characters/axe_left_rignt_v2.png" id="4_ea7lo"]
-[ext_resource type="Script" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
-[ext_resource type="Script" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
+[ext_resource type="Script" uid="uid://dn3yhesh7nvei" path="res://scene/characters/player/idle_script.gd" id="4_vj7nq"]
+[ext_resource type="Script" uid="uid://ba2xgwen4fgw5" path="res://scene/characters/player/walk_state.gd" id="5_vj7nq"]
 [ext_resource type="Texture2D" uid="uid://pap3hwwt30dt" path="res://assets/game/Characters/player_sprite_sheet_walk_v1.png" id="5_wf2u3"]
+[ext_resource type="Texture2D" uid="uid://dildlv7rsfttv" path="res://assets/game/Characters/grass1.png" id="5_wnss5"]
 [ext_resource type="Texture2D" uid="uid://crk72ul0fynwy" path="res://assets/game/Characters/pickaxe_front_back.png" id="6_ak8s5"]
-[ext_resource type="Script" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
+[ext_resource type="Texture2D" uid="uid://c3775buofgfpc" path="res://assets/game/Characters/jk.png" id="6_or6p2"]
+[ext_resource type="Script" uid="uid://cppkge7d6lbqg" path="res://scene/characters/player/chopping_state.gd" id="7_8nhx4"]
 [ext_resource type="Texture2D" uid="uid://b6c5uchhijvix" path="res://assets/game/Characters/pickaxe.png" id="7_gu648"]
+[ext_resource type="Texture2D" uid="uid://bvsbo4yhi06ea" path="res://assets/game/Characters/V.png" id="7_ojgml"]
 [ext_resource type="Texture2D" uid="uid://deu5r41fumai4" path="res://assets/game/Characters/pickaxe_left_right.png" id="8_blx1y"]
-[ext_resource type="Script" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
-[ext_resource type="Script" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
+[ext_resource type="Script" uid="uid://ct657u58fpc7l" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
+[ext_resource type="Script" uid="uid://bp8fysclugakr" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
 [ext_resource type="Texture2D" uid="uid://djmp8xk8psdi2" path="res://assets/game/Characters/watering.png" id="9_gse2m"]
 [ext_resource type="PackedScene" uid="uid://b6vh4iwotuhyt" path="res://scene/components/hit_component.tscn" id="12_a6bj1"]
 
@@ -57,6 +60,54 @@ region = Rect2(798, 50, 176, 440)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xo6dw"]
 atlas = ExtResource("4_ea7lo")
 region = Rect2(1235, 50, 147, 440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51m3a"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(110, 90, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gunr"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(270, 90, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y8ax"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(430, 90, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5oub"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(590, 90, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w36fw"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(750, 90, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2g8"]
+atlas = ExtResource("6_or6p2")
+region = Rect2(277, 420, 167, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8er2l"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(110, 233, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4104"]
+atlas = ExtResource("7_ojgml")
+region = Rect2(100, 410, 168, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roplt"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(261, 233, 161, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oj06"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(110, 376, 160, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov7hk"]
+atlas = ExtResource("7_ojgml")
+region = Rect2(100, 150, 168, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctckt"]
+atlas = ExtResource("5_wnss5")
+region = Rect2(270, 376, 160, 143)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6bj1"]
 atlas = ExtResource("5_wf2u3")
@@ -216,7 +267,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"chopping_back",
-"speed": 1.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -253,6 +304,62 @@ animations = [{
 "loop": true,
 "name": &"chopping_right",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51m3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gunr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y8ax")
+}],
+"loop": false,
+"name": &"cutting_back",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5oub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w36fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2g8")
+}],
+"loop": false,
+"name": &"cutting_front",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8er2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4104")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roplt")
+}],
+"loop": false,
+"name": &"cutting_left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oj06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov7hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctckt")
+}],
+"loop": false,
+"name": &"cutting_right",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -450,7 +557,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_stjjq"]
-radius = 8.0
+radius = 5.0990195
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gxq7"]
 radius = 4.0
@@ -462,13 +569,11 @@ script = ExtResource("1_v7krq")
 current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.98023e-08, -8)
-scale = Vector2(0.181291, 0.0994138)
+position = Vector2(-0.24836084, -7.554043)
+scale = Vector2(0.172, 0.099)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"watering_right"
+animation = &"cutting_back"
 autoplay = "idle_front"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1

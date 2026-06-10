@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crk72ul0fynwy"
-path="res://.godot/imported/pickaxe_front_back.png-83e95fc418628c1170481ebd6966fd8c.ctex"
+uid="uid://cqntfpsm6xrmf"
+path="res://.godot/imported/pp.png-268bdb17019294c79af8ea761930481e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Characters/pickaxe_front_back.png"
-dest_files=["res://.godot/imported/pickaxe_front_back.png-83e95fc418628c1170481ebd6966fd8c.ctex"]
+source_file="res://assets/game/Characters/pp.png"
+dest_files=["res://.godot/imported/pp.png-268bdb17019294c79af8ea761930481e.ctex"]
 
 [params]
 

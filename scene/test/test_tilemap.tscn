@@ -979,7 +979,6 @@ tile_map_data = PackedByteArray("AAAOAA8AAQAAAAAAAAAFABAAAQAAAAAAAAADAAoAAQAAAAA
 tile_set = SubResource("TileSet_lg7at")
 
 [node name="tree1" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(-4, -5)
 rotation = 0.00536608
@@ -988,7 +987,6 @@ tile_map_data = PackedByteArray("AAADAP//AAAAAAAAAAABAAAAAAAAAAAAAAAHAAEAAAAAAAA
 tile_set = SubResource("TileSet_eal5j")
 
 [node name="tree2" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(0, -8)
 scale = Vector2(0.3, 0.3)
@@ -996,7 +994,6 @@ tile_map_data = PackedByteArray("AAAEAAAAAAAAAAAAAAAGAAMAAAAAAAAAAAAJAAIAAAAAAAA
 tile_set = SubResource("TileSet_whw3x")
 
 [node name="tree3" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(5, 6)
 scale = Vector2(0.3, 0.3)
@@ -1009,7 +1006,6 @@ position = Vector2(18, -3)
 tile_set = SubResource("TileSet_kidmw")
 
 [node name="tree4" type="TileMapLayer" parent="."]
-visible = false
 y_sort_enabled = true
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AABwAAoAAAAAAAAAAAB3ABYAAAAAAAAAAAALABcAAAAAAAAAAAARABMAAAAAAAAAAAAUAD0AAAAAAAAAAAAtAD0AAAAAAAAAAAAzAAgAAAAAAAAAAABkAAYAAAAAAAAAAABhAAoAAAAAAAAAAAAfAAsAAAAAAAAAAAA=")
