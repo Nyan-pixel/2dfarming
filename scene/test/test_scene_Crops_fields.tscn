@@ -104,7 +104,6 @@ tile_set = ExtResource("2_68e5o")
 script = ExtResource("9_68e5o")
 grass_tilemap_layer = NodePath("../gametilemaps/grass")
 tilled_soil_tilemap_layer = NodePath("../gametilemaps/TilledSoil")
-terrain = 2
 
 [node name="CropCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("8_m0228")]
 script = ExtResource("9_20hap")

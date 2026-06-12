@@ -723,7 +723,7 @@ tile_set = ExtResource("17_fnqo3")
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("20_r3x7e")]
 script = ExtResource("21_0xo7q")
-grass_tilemap_layer = NodePath("../Tilemap/highground")
+grass_tilemap_layer = NodePath("../Tilemap/water")
 tilled_soil_tilemap_layer = NodePath("../Tilemap/TilledSoil")
 terrain = 2
 
