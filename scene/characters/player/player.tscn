@@ -378,7 +378,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"cutting_right",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -425,8 +425,18 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r8mp8")
 }],
+<<<<<<< Updated upstream
 "loop": false,
 "name": &"mining_back",
+=======
+<<<<<<< HEAD
+"loop": false,
+"name": &"tilling_back",
+=======
+"loop": true,
+"name": &"mining_back",
+>>>>>>> 7e0e67c6029a57d7cee284d5272a667e43400c61
+>>>>>>> Stashed changes
 "speed": 3.0
 }, {
 "frames": [{
@@ -436,8 +446,18 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d43w2")
 }],
+<<<<<<< Updated upstream
 "loop": false,
 "name": &"mining_front",
+=======
+<<<<<<< HEAD
+"loop": false,
+"name": &"tilling_front",
+=======
+"loop": true,
+"name": &"mining_front",
+>>>>>>> 7e0e67c6029a57d7cee284d5272a667e43400c61
+>>>>>>> Stashed changes
 "speed": 3.0
 }, {
 "frames": [{
@@ -458,7 +478,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xhpa3")
 }],
+<<<<<<< Updated upstream
 "loop": false,
+=======
+"loop": true,
+>>>>>>> Stashed changes
 "name": &"mining_right",
 "speed": 3.0
 }, {
@@ -620,10 +644,21 @@ script = ExtResource("1_v7krq")
 current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+<<<<<<< Updated upstream
 position = Vector2(-0.24836086, -8.554043)
 scale = Vector2(0.172, 0.099)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
 animation = &"watering_right"
+=======
+position = Vector2(-0.24836086, -9.554044)
+scale = Vector2(0.172, 0.099)
+sprite_frames = SubResource("SpriteFrames_tg7s0")
+<<<<<<< HEAD
+animation = &"chopping_front"
+=======
+animation = &"tilling_right"
+>>>>>>> 7e0e67c6029a57d7cee284d5272a667e43400c61
+>>>>>>> Stashed changes
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
