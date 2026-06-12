@@ -1,7 +1,6 @@
 extends Sprite2D
 
-# 1. ADD THIS EXPORT VARIABLE AT THE TOP
-# This allows you to change the log amount for each tree size in the Inspector!
+# Allows you to change the log amount for each tree size in the Inspector
 @export var log_drop_amount: int = 1
 
 @onready var hurt_component: HurtComponent = $HurtComponent
@@ -15,12 +14,16 @@ func _ready() -> void:
 
 func on_hurt(hit_damage: int) -> void:
  damage_component.apply_damage(hit_damage)
- material.set_shader_parameter("shake_intensity", 0.5)
- await get_tree().create_timer(1.0).timeout
- material.set_shader_parameter("shake_intensity", 0.0)
+ 
+ # Safety check to prevent crashing if no material/shader is assigned
+ if material:
+  material.set_shader_parameter("shake_intensity", 0.5)
+  await get_tree().create_timer(0.2).timeout # Reduced from 1.0 to 0.2 so the tree doesn't shake for too long
+  material.set_shader_parameter("shake_intensity", 0.0)
 
 func on_max_damaged_reached() -> void:
- call_deferred("add_log_scene")
+ # Call spawning BEFORE queue_free to guarantee we grab the correct coordinates
+ add_log_scene()
  print("max damaged reached")
  queue_free()
 
@@ -28,12 +31,20 @@ func add_log_scene() -> void:
  if not log_scene:
   return
   
- # 2. LOOP LOG SPAWNING BASED ON THE EXPORT VARIABLE
+ # Store the current world position right now before the tree is deleted
+ var spawn_origin = global_position
+ 
+ # Access the main level/world layer so the log isn't bound to the tree's parent offsets
+ var world_node = get_tree().current_scene
+ 
  for i in range(log_drop_amount):
   var log_instance = log_scene.instantiate() as Node2D
   
-  # Give logs a tiny random offset so they don't stack perfectly on top of each other
+  # Give logs a tiny random offset so they don't stack perfectly
   var random_offset = Vector2(randf_range(-15, 15), randf_range(-15, 15))
-  log_instance.global_position = global_position + random_offset
   
-  get_parent().add_child(log_instance)
+  # Spawn the log directly into the world layer
+  world_node.add_child(log_instance)
+  
+  # Set the position AFTER adding it to the tree so global coordinates lock in correctly
+  log_instance.global_position = spawn_origin + random_offset
