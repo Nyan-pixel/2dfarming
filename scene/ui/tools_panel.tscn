@@ -121,5 +121,3 @@ icon = SubResource("AtlasTexture_t1mb4")
 icon_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolScythe" to="." method="_on_tool_scythe_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolPickaxe" to="." method="_on_tool_pickaxe_pressed"]

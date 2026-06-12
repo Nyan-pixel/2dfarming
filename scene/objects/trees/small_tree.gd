@@ -12,6 +12,7 @@ func _ready() -> void:
  hurt_component.hurt.connect(on_hurt)
  damage_component.max_damaged_reached.connect(on_max_damaged_reached)
 
+
 func on_hurt(hit_damage: int) -> void:
  damage_component.apply_damage(hit_damage)
  
@@ -21,11 +22,13 @@ func on_hurt(hit_damage: int) -> void:
   await get_tree().create_timer(0.2).timeout # Reduced from 1.0 to 0.2 so the tree doesn't shake for too long
   material.set_shader_parameter("shake_intensity", 0.0)
 
+
 func on_max_damaged_reached() -> void:
  # Call spawning BEFORE queue_free to guarantee we grab the correct coordinates
  add_log_scene()
  print("max damaged reached")
  queue_free()
+
 
 func add_log_scene() -> void:
  if not log_scene:
@@ -43,8 +46,8 @@ func add_log_scene() -> void:
   # Give logs a tiny random offset so they don't stack perfectly
   var random_offset = Vector2(randf_range(-15, 15), randf_range(-15, 15))
   
-  # Spawn the log directly into the world layer
-  world_node.add_child(log_instance)
-  
-  # Set the position AFTER adding it to the tree so global coordinates lock in correctly
+  # Set the position on the instance BEFORE safely deferring its entry into the tree
   log_instance.global_position = spawn_origin + random_offset
+  
+  # Spawn the log safely after the physics calculation frame finishes
+  world_node.add_child.call_deferred(log_instance)
