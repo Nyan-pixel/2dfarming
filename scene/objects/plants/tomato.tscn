@@ -29,7 +29,7 @@ frame = 7
 
 [node name="HurtComponent" parent="." instance=ExtResource("6_syd7w")]
 position = Vector2(0, -4)
-tool = 3
+tool = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, 2.5)
