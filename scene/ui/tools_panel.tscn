@@ -1,12 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2b7r4cw8hr8r"]
+[gd_scene load_steps=16 format=3 uid="uid://c2b7r4cw8hr8r"]
 
 [ext_resource type="Theme" uid="uid://xafwas3w3fi0" path="res://scene/ui/game_ui_theme.tres" id="1_mvffb"]
 [ext_resource type="Texture2D" uid="uid://b2b6qy2huc5rm" path="res://assets/game/Objects/Basic tools and meterials.png" id="2_3eg61"]
 [ext_resource type="Script" uid="uid://bw5jxeb45mswo" path="res://scene/ui/tools_panel.gd" id="2_ic3pl"]
 [ext_resource type="Texture2D" uid="uid://coqv7ggy8jmxj" path="res://assets/game/Objects/Basic_Plants.png" id="3_3m4gr"]
+[ext_resource type="Texture2D" uid="uid://dcitp1ryvrkcp" path="res://assets/game/Characters/tools16pixel.png" id="4_isgxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3m4gr"]
 atlas = ExtResource("2_3eg61")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gri6k"]
+atlas = ExtResource("4_isgxs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy1nf"]
+atlas = ExtResource("4_isgxs")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3eg61"]
@@ -63,6 +72,22 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_3m4gr")
 icon_alignment = 1
 
+[node name="ToolScythe" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_gri6k")
+icon_alignment = 1
+
+[node name="ToolPickaxe" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_sy1nf")
+icon_alignment = 1
+
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
@@ -96,3 +121,5 @@ icon = SubResource("AtlasTexture_t1mb4")
 icon_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolScythe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolPickaxe" to="." method="_on_tool_axe_pressed"]

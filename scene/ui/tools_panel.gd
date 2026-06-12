@@ -5,6 +5,8 @@ extends PanelContainer
 @onready var tool_watering: Button = $MarginContainer/HBoxContainer/ToolWatering
 @onready var corn: Button = $MarginContainer/HBoxContainer/Corn
 @onready var tomato: Button = $MarginContainer/HBoxContainer/Tomato
+@onready var tool_pickaxe: Button = $MarginContainer/HBoxContainer/ToolPickaxe
+@onready var tool_scythe: Button = $MarginContainer/HBoxContainer/ToolScythe
 
 # List of all UI slot buttons to reset their brightness
 var all_buttons: Array = []
@@ -14,6 +16,8 @@ func _ready() -> void:
 	tool_axe.pressed.connect(_on_axe_pressed)
 	tool_tilling.pressed.connect(_on_tilling_pressed)
 	tool_watering.pressed.connect(_on_watering_pressed)
+	tool_pickaxe.pressed.connect(_on_pickaxe_pressed)
+	tool_scythe.pressed.connect(_on_scythe_pressed)
 	corn.pressed.connect(_on_corn_pressed)
 	tomato.pressed.connect(_on_tomato_pressed)
 	
@@ -40,6 +44,7 @@ func _on_global_tool_selected(active_tool: DataTypes.Tools) -> void:
 			tool_axe.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.TillGround:
 			tool_tilling.modulate = Color(1.5, 1.5, 1.5, 1.0)
+			
 		DataTypes.Tools.WaterCrops:
 			tool_watering.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.PlantCorn:
@@ -56,6 +61,12 @@ func _on_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
 
 func _on_tilling_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.TillGround)
+
+func _on_pickaxe_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.TillGround)
+
+func _on_scythe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.TillGround)
 
 func _on_watering_pressed() -> void:
