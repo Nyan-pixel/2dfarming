@@ -320,7 +320,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xo6dw")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_right",
 "speed": 3.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8gxq7")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_back",
 "speed": 4.0
 }, {
@@ -411,7 +411,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tg7s0")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_right",
 "speed": 4.0
 }, {
@@ -425,7 +425,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r8mp8")
 }],
-"loop": true,
+"loop": false,
 "name": &"mining_back",
 "speed": 3.0
 }, {
@@ -436,7 +436,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d43w2")
 }],
-"loop": true,
+"loop": false,
 "name": &"mining_front",
 "speed": 3.0
 }, {
@@ -458,7 +458,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xhpa3")
 }],
-"loop": true,
+"loop": false,
 "name": &"mining_right",
 "speed": 3.0
 }, {
@@ -620,10 +620,10 @@ script = ExtResource("1_v7krq")
 current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.24836084, -7.554043)
+position = Vector2(-0.24836086, -8.554043)
 scale = Vector2(0.172, 0.099)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"tilling_right"
+animation = &"watering_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
