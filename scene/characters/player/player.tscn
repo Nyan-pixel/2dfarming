@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://baobhkkvmt1nd"]
+[gd_scene load_steps=89 format=3 uid="uid://baobhkkvmt1nd"]
 
 [ext_resource type="Script" uid="uid://uyqo7sfb2quo" path="res://scene/characters/player/player.gd" id="1_v7krq"]
 [ext_resource type="Texture2D" uid="uid://cdoabfgwo328b" path="res://assets/game/Characters/axev3.png" id="2_bx1cu"]
@@ -19,7 +19,10 @@
 [ext_resource type="Script" uid="uid://ct657u58fpc7l" path="res://scene/characters/player/tilling_state.gd" id="8_wf2u3"]
 [ext_resource type="Script" uid="uid://bp8fysclugakr" path="res://scene/characters/player/watering_state.gd" id="9_efkcd"]
 [ext_resource type="Texture2D" uid="uid://djmp8xk8psdi2" path="res://assets/game/Characters/watering.png" id="9_gse2m"]
+[ext_resource type="Texture2D" uid="uid://c1pq6piukrtv3" path="res://assets/game/Characters/Basic Charakter Spritesheet.png" id="12_51m3a"]
 [ext_resource type="PackedScene" uid="uid://b6vh4iwotuhyt" path="res://scene/components/hit_component.tscn" id="12_a6bj1"]
+[ext_resource type="Script" uid="uid://cc6kdljo1ch1j" path="res://scene/characters/player/mining_state.gd" id="18_or6p2"]
+[ext_resource type="Script" uid="uid://deioab4bkxcyw" path="res://scene/characters/player/cutting_state.gd" id="19_ojgml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snheg"]
 atlas = ExtResource("2_o7jhj")
@@ -164,6 +167,22 @@ region = Rect2(720, 130, 320, 268)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhpa3"]
 atlas = ExtResource("8_blx1y")
 region = Rect2(1405, 130, 134, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epq6u"]
+atlas = ExtResource("12_51m3a")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stjjq"]
+atlas = ExtResource("12_51m3a")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o83rq"]
+atlas = ExtResource("12_51m3a")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0b1p"]
+atlas = ExtResource("12_51m3a")
+region = Rect2(48, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyhlb"]
 atlas = ExtResource("5_wf2u3")
@@ -407,7 +426,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_r8mp8")
 }],
 "loop": true,
-"name": &"tilling_back",
+"name": &"mining_back",
 "speed": 3.0
 }, {
 "frames": [{
@@ -418,7 +437,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_d43w2")
 }],
 "loop": true,
-"name": &"tilling_front",
+"name": &"mining_front",
 "speed": 3.0
 }, {
 "frames": [{
@@ -429,7 +448,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ruoyb")
 }],
 "loop": false,
-"name": &"tilling_left",
+"name": &"mining_left",
 "speed": 3.0
 }, {
 "frames": [{
@@ -440,8 +459,40 @@ animations = [{
 "texture": SubResource("AtlasTexture_xhpa3")
 }],
 "loop": true,
-"name": &"tilling_right",
+"name": &"mining_right",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epq6u")
+}],
+"loop": false,
+"name": &"tiling_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stjjq")
+}],
+"loop": false,
+"name": &"tilling_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o83rq")
+}],
+"loop": false,
+"name": &"tilling_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0b1p")
+}],
+"loop": false,
+"name": &"tilling_right",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -572,7 +623,7 @@ current_tool = 1
 position = Vector2(-0.24836084, -7.554043)
 scale = Vector2(0.172, 0.099)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"cutting_back"
+animation = &"tilling_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -596,6 +647,18 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D", "hit_component_collision_shape")]
 script = ExtResource("7_8nhx4")
+player = NodePath("../..")
+animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
+
+[node name="Mining" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D", "hit_component_collision_shape")]
+script = ExtResource("18_or6p2")
+player = NodePath("../..")
+animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
+
+[node name="Cutting" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2D", "hit_component_collision_shape")]
+script = ExtResource("19_ojgml")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
