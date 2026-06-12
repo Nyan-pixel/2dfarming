@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://dhheyesq1lvuw"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://dhheyesq1lvuw"]
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_vkkoh"]
 [ext_resource type="Texture2D" uid="uid://ckq8gani2t1q2" path="res://assets/game/Tilesets/Grass.png" id="2_u10in"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkn8e0bqqbi4n" path="res://scene/objects/trees/tree_2.tscn" id="10_e6xsa"]
 [ext_resource type="PackedScene" uid="uid://7ouatl2f0eoh" path="res://scene/objects/trees/tree_3.tscn" id="11_2l6eg"]
 [ext_resource type="Texture2D" uid="uid://k4ias81bqf5h" path="res://assets/game/Tilesets/Tilled_Dirt_Wide_v2.png" id="12_e6xsa"]
+[ext_resource type="Texture2D" uid="uid://c6q0fchgh3sex" path="res://assets/game/Tilesets/Tilled Dirt.png" id="13_2l6eg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u10in"]
 texture = ExtResource("1_vkkoh")
@@ -797,6 +798,35 @@ texture = ExtResource("12_e6xsa")
 6:1/0/terrains_peering_bit/top_side = 2
 6:1/0/terrains_peering_bit/top_right_corner = 2
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mm0o7"]
+texture = ExtResource("13_2l6eg")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 3
+0:0/0/terrains_peering_bit/right_side = 3
+0:0/0/terrains_peering_bit/bottom_right_corner = 3
+0:0/0/terrains_peering_bit/bottom_side = 3
+0:0/0/terrains_peering_bit/bottom_left_corner = 3
+0:0/0/terrains_peering_bit/left_side = 3
+0:0/0/terrains_peering_bit/top_left_corner = 3
+0:0/0/terrains_peering_bit/top_side = 3
+0:0/0/terrains_peering_bit/top_right_corner = 3
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 3
+1:0/0/terrains_peering_bit/right_side = 3
+1:0/0/terrains_peering_bit/bottom_right_corner = 3
+1:0/0/terrains_peering_bit/bottom_side = 3
+1:0/0/terrains_peering_bit/bottom_left_corner = 3
+1:0/0/terrains_peering_bit/left_side = 3
+1:0/0/terrains_peering_bit/top_left_corner = 3
+1:0/0/terrains_peering_bit/top_side = 3
+1:0/0/terrains_peering_bit/top_right_corner = 3
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -806,6 +836,8 @@ terrain_set_0/terrain_1/name = "tilleddirt 1"
 terrain_set_0/terrain_1/color = Color(0.802216, 0.603607, 0.260161, 1)
 terrain_set_0/terrain_2/name = "Tilled Dirt Terrain Cropfield"
 terrain_set_0/terrain_2/color = Color(0.298369, 0.41207, 0.949479, 1)
+terrain_set_0/terrain_3/name = "Crop Field 3"
+terrain_set_0/terrain_3/color = Color(0.375, 0.5, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_u10in")
 sources/1 = SubResource("TileSetAtlasSource_2ibyg")
 sources/2 = SubResource("TileSetAtlasSource_oygu6")
@@ -814,3 +846,4 @@ sources/4 = SubResource("TileSetAtlasSource_yihm3")
 sources/5 = SubResource("TileSetAtlasSource_tppug")
 sources/6 = SubResource("TileSetScenesCollectionSource_dputo")
 sources/7 = SubResource("TileSetAtlasSource_2l6eg")
+sources/8 = SubResource("TileSetAtlasSource_mm0o7")

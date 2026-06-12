@@ -1,21 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjs7ccd5d4vie"]
+[gd_scene load_steps=16 format=4 uid="uid://bjs7ccd5d4vie"]
 
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="1_2m6x3"]
 [ext_resource type="PackedScene" uid="uid://drd8k2inanni1" path="res://scene/test/test_tilemap_1.tscn" id="2_pv7r2"]
-[ext_resource type="PackedScene" uid="uid://bajv637y4ujir" path="res://scene/objects/trees/tree_1.tscn" id="3_netqu"]
-[ext_resource type="Shader" uid="uid://ogdy8gnqtapr" path="res://scene/objects/trees/tree_shake.gdshader" id="4_cl6sg"]
+[ext_resource type="PackedScene" uid="uid://cvfugxxni6yaj" path="res://scene/components/field_cursor_component.tscn" id="5_a5h7a"]
+[ext_resource type="Script" uid="uid://encln1my7qx3" path="res://scene/components/crop_cursor_component.gd" id="5_a36wj"]
+[ext_resource type="TileSet" uid="uid://dhheyesq1lvuw" path="res://tilesets/gametilesets.tres" id="5_fg760"]
 [ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="5_ftski"]
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="6_a36wj"]
+[ext_resource type="Script" uid="uid://dmr175av1oqch" path="res://scene/components/field_cursor_component.gd" id="6_fg760"]
+[ext_resource type="PackedScene" uid="uid://4u1ibhxk6vgd" path="res://scene/components/crop_cursor_component.tscn" id="6_m4p2l"]
 [ext_resource type="PackedScene" uid="uid://bucojib7x2bvp" path="res://scene/objects/plants/tomato.tscn" id="7_netqu"]
 [ext_resource type="PackedScene" uid="uid://b8alupsunti5" path="res://scene/objects/plants/corn.tscn" id="8_cl6sg"]
 [ext_resource type="PackedScene" uid="uid://1dkjt1xi1b1k" path="res://scene/characters/cow/cow.tscn" id="9_cl6sg"]
 [ext_resource type="PackedScene" uid="uid://230kmok5s7ft" path="res://scene/characters/chicken/chicken.tscn" id="10_ftski"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8np4a"]
-resource_local_to_scene = true
-shader = ExtResource("4_cl6sg")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a36wj"]
 vertices = PackedVector2Array(531, 159.844, 531, 203, 424, 203, 424, 158.156)
@@ -40,9 +37,26 @@ initial_minute = 0
 y_sort_enabled = true
 position = Vector2(-142, -35)
 
-[node name="Tree1" parent="gametilemap1" instance=ExtResource("3_netqu")]
-material = SubResource("ShaderMaterial_8np4a")
-position = Vector2(183.25, 135)
+[node name="Grass" type="TileMapLayer" parent="."]
+position = Vector2(-142, -35)
+tile_map_data = PackedByteArray("AAAFAAEAAAAGAAEAAAAeAAsAAQACAAIAAAAeAAoAAQACAAEAAAAeAAkAAQACAAEAAAAeAAgAAQACAAEAAAAeAAcAAQACAAAAAAAdAAsAAQABAAIAAAAdAAoAAQABAAEAAAAdAAkAAQABAAEAAAAdAAgAAQABAAEAAAAdAAcAAQABAAAAAAAcAAsAAQABAAIAAAAcAAoAAQABAAEAAAAcAAkAAQABAAEAAAAcAAgAAQABAAEAAAAcAAcAAQABAAAAAAAbAAsAAQABAAIAAAAbAAoAAQABAAEAAAAbAAkAAQABAAEAAAAbAAgAAQABAAEAAAAbAAcAAQABAAAAAAAaAAsAAQABAAIAAAAaAAoAAQABAAEAAAAaAAkAAQABAAEAAAAaAAgAAQABAAEAAAAaAAcAAQABAAAAAAAZAAsAAQABAAIAAAAZAAoAAQABAAEAAAAZAAkAAQABAAEAAAAZAAgAAQABAAEAAAAZAAcAAQABAAAAAAAYAAsAAQABAAIAAAAYAAoAAQABAAEAAAAYAAkAAQABAAEAAAAYAAgAAQABAAEAAAAYAAcAAQABAAAAAAAXAAsAAQABAAIAAAAXAAoAAQABAAEAAAAXAAkAAQABAAEAAAAXAAgAAQABAAEAAAAXAAcAAQABAAAAAAAWAAsAAQAAAAIAAAAWAAoAAQAAAAEAAAAWAAkAAQAAAAEAAAAWAAgAAQAAAAEAAAAWAAcAAQAAAAAAAAA=")
+tile_set = ExtResource("5_fg760")
+
+[node name="TilledSoil" type="TileMapLayer" parent="."]
+position = Vector2(-142, -35)
+tile_set = ExtResource("5_fg760")
+
+[node name="CropFields" type="Node2D" parent="."]
+
+[node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("5_a5h7a")]
+script = ExtResource("6_fg760")
+grass_tilemap_layer = NodePath("../Grass")
+tilled_soil_tilemap_layer = NodePath("../TilledSoil")
+terrain = 2
+
+[node name="CropCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("6_m4p2l")]
+script = ExtResource("5_a36wj")
+tilled_soil_tilemap_layer = NodePath("../Grass")
 
 [node name="Player" parent="." instance=ExtResource("5_ftski")]
 position = Vector2(224, 169)
