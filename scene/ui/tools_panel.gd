@@ -16,13 +16,13 @@ func _ready() -> void:
 	tool_axe.pressed.connect(_on_axe_pressed)
 	tool_tilling.pressed.connect(_on_tilling_pressed)
 	tool_watering.pressed.connect(_on_watering_pressed)
-	tool_pickaxe.pressed.connect(_on_pickaxe_pressed)
-	tool_scythe.pressed.connect(_on_scythe_pressed)
+	tool_pickaxe.pressed.connect(_on_tool_pickaxe_pressed)
+	tool_scythe.pressed.connect(_on_tool_scythe_pressed)
 	corn.pressed.connect(_on_corn_pressed)
 	tomato.pressed.connect(_on_tomato_pressed)
 	
 	# 2. Put all buttons into an array so we can dim them down cleanly
-	all_buttons = [tool_axe,tool_pickaxe,tool_scythe, tool_tilling, tool_watering, corn, tomato]
+	all_buttons = [tool_axe,tool_scythe,tool_pickaxe, tool_tilling, tool_watering, corn, tomato]
 	
 	# 3. Listen to the global ToolManager signal for hotkey presses (O/P)
 	ToolManager.tool_selected.connect(_on_global_tool_selected)
@@ -42,12 +42,12 @@ func _on_global_tool_selected(active_tool: DataTypes.Tools) -> void:
 	match active_tool:
 		DataTypes.Tools.AxeWood:
 			tool_axe.modulate = Color(1.5, 1.5, 1.5, 1.0)
-		DataTypes.Tools.TillGround:
-			tool_tilling.modulate = Color(1.5, 1.5, 1.5, 1.0)
-		DataTypes.Tools.Pickaxe:
-			tool_pickaxe.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.Scythe:
 			tool_scythe.modulate = Color(1.5, 1.5, 1.5, 1.0)
+		DataTypes.Tools.Pickaxe:
+			tool_pickaxe.modulate = Color(1.5, 1.5, 1.5, 1.0)
+		DataTypes.Tools.TillGround:
+			tool_tilling.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.WaterCrops:
 			tool_watering.modulate = Color(1.5, 1.5, 1.5, 1.0)
 		DataTypes.Tools.PlantCorn:
@@ -63,15 +63,15 @@ func _on_global_tool_selected(active_tool: DataTypes.Tools) -> void:
 func _on_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
 
+func _on_tool_scythe_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.Scythe) # Replace with function body.
+
+func _on_tool_pickaxe_pressed() -> void:
+	ToolManager.select_tool(DataTypes.Tools.Pickaxe) # Replace with function body.
+
 func _on_tilling_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.TillGround)
-
-func _on_pickaxe_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.Pickaxe)
-
-func _on_scythe_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.Scythe)
-
+	
 func _on_watering_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 
