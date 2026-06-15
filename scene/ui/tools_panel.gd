@@ -82,3 +82,15 @@ func _on_corn_pressed() -> void:
 func _on_tomato_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 	# If you want tomato clicks to do something, assign its tool type here later!
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			ToolManager.select_tool(DataTypes.Tools.None)
+			tool_axe.release_focus()
+			tool_scythe.release_focus()
+			tool_pickaxe.release_focus()
+			tool_tilling.release_focus()
+			tool_watering.release_focus()
+			corn.release_focus()
+			tomato.release_focus()
+			

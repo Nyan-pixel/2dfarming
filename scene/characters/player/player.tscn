@@ -569,7 +569,7 @@ animations = [{
 radius = 5.0990195
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gxq7"]
-radius = 7.0
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
@@ -581,7 +581,7 @@ current_tool = 1
 position = Vector2(-0.24836081, -7.5540433)
 scale = Vector2(0.172, 0.099)
 sprite_frames = SubResource("SpriteFrames_tg7s0")
-animation = &"cutting_right"
+animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

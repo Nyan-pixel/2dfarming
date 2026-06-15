@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bjs7ccd5d4vie"]
+[gd_scene load_steps=16 format=3 uid="uid://bjs7ccd5d4vie"]
 
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="1_2m6x3"]
 [ext_resource type="PackedScene" uid="uid://drd8k2inanni1" path="res://scene/test/test_tilemap_1.tscn" id="2_pv7r2"]
@@ -39,7 +39,7 @@ position = Vector2(-142, -35)
 
 [node name="Grass" type="TileMapLayer" parent="."]
 position = Vector2(-142, -35)
-tile_map_data = PackedByteArray("AAAFAAEAAAAGAAEAAAAeAAsAAQACAAIAAAAeAAoAAQACAAEAAAAeAAkAAQACAAEAAAAeAAgAAQACAAEAAAAeAAcAAQACAAAAAAAdAAsAAQABAAIAAAAdAAoAAQABAAEAAAAdAAkAAQABAAEAAAAdAAgAAQABAAEAAAAdAAcAAQABAAAAAAAcAAsAAQABAAIAAAAcAAoAAQABAAEAAAAcAAkAAQABAAEAAAAcAAgAAQABAAEAAAAcAAcAAQABAAAAAAAbAAsAAQABAAIAAAAbAAoAAQABAAEAAAAbAAkAAQABAAEAAAAbAAgAAQABAAEAAAAbAAcAAQABAAAAAAAaAAsAAQABAAIAAAAaAAoAAQABAAEAAAAaAAkAAQABAAEAAAAaAAgAAQABAAEAAAAaAAcAAQABAAAAAAAZAAsAAQABAAIAAAAZAAoAAQABAAEAAAAZAAkAAQABAAEAAAAZAAgAAQABAAEAAAAZAAcAAQABAAAAAAAYAAsAAQABAAIAAAAYAAoAAQABAAEAAAAYAAkAAQABAAEAAAAYAAgAAQABAAEAAAAYAAcAAQABAAAAAAAXAAsAAQABAAIAAAAXAAoAAQABAAEAAAAXAAkAAQABAAEAAAAXAAgAAQABAAEAAAAXAAcAAQABAAAAAAAWAAsAAQAAAAIAAAAWAAoAAQAAAAEAAAAWAAkAAQAAAAEAAAAWAAgAAQAAAAEAAAAWAAcAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray(0, 0, 5, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0)
 tile_set = ExtResource("5_fg760")
 
 [node name="TilledSoil" type="TileMapLayer" parent="."]
@@ -59,6 +59,7 @@ script = ExtResource("5_a36wj")
 tilled_soil_tilemap_layer = NodePath("../Grass")
 
 [node name="Player" parent="." instance=ExtResource("5_ftski")]
+visible = false
 position = Vector2(224, 169)
 current_tool = 0
 
