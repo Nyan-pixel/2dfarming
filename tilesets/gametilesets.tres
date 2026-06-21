@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://dhheyesq1lvuw"]
+[gd_resource type="TileSet" load_steps=26 format=3 uid="uid://dhheyesq1lvuw"]
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_vkkoh"]
 [ext_resource type="Texture2D" uid="uid://ckq8gani2t1q2" path="res://assets/game/Tilesets/Grass.png" id="2_u10in"]
@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bkn8e0bqqbi4n" path="res://scene/objects/trees/tree_2.tscn" id="10_e6xsa"]
 [ext_resource type="PackedScene" uid="uid://7ouatl2f0eoh" path="res://scene/objects/trees/tree_3.tscn" id="11_2l6eg"]
 [ext_resource type="Texture2D" uid="uid://k4ias81bqf5h" path="res://assets/game/Tilesets/Tilled_Dirt_Wide_v2.png" id="12_e6xsa"]
+[ext_resource type="PackedScene" uid="uid://csetfn5b8e6nw" path="res://scene/objects/bushes/bush_1.tscn" id="12_mm0o7"]
 [ext_resource type="Texture2D" uid="uid://c6q0fchgh3sex" path="res://assets/game/Tilesets/Tilled Dirt.png" id="13_2l6eg"]
+[ext_resource type="PackedScene" uid="uid://dwcsuac6r1xsk" path="res://scene/objects/bushes/bush_2.tscn" id="13_roagc"]
+[ext_resource type="PackedScene" uid="uid://dilwii1wctp57" path="res://scene/objects/bushes/bush_3.tscn" id="14_cc17c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u10in"]
 texture = ExtResource("1_vkkoh")
@@ -582,6 +585,9 @@ scenes/2/scene = ExtResource("8_dputo")
 scenes/3/scene = ExtResource("9_6qv3p")
 scenes/4/scene = ExtResource("10_e6xsa")
 scenes/5/scene = ExtResource("11_2l6eg")
+scenes/6/scene = ExtResource("12_mm0o7")
+scenes/7/scene = ExtResource("13_roagc")
+scenes/8/scene = ExtResource("14_cc17c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2l6eg"]
 texture = ExtResource("12_e6xsa")

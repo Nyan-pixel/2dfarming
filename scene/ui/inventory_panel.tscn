@@ -120,6 +120,7 @@ theme_type_variation = &"InventoryLabel"
 text = "0"
 
 [node name="Egg" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"InventoryItemPanel"
@@ -138,6 +139,7 @@ theme_type_variation = &"InventoryLabel"
 text = "0"
 
 [node name="Milk" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"InventoryItemPanel"
