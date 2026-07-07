@@ -8,10 +8,31 @@ extends PanelContainer
 @onready var tool_pickaxe: Button = $MarginContainer/HBoxContainer/ToolPickaxe
 @onready var tool_scythe: Button = $MarginContainer/HBoxContainer/ToolScythe
 
+
+
 # List of all UI slot buttons to reset their brightness
 var all_buttons: Array = []
 
 func _ready() -> void:
+	ToolManager.enable_tool.connect(on_enable_tool_button)
+	
+	tool_tilling.disabled = true
+	tool_tilling.focus_mode = Control.FOCUS_NONE
+	
+	tool_watering.disabled = true
+	tool_watering.focus_mode = Control.FOCUS_NONE
+	
+	tool_pickaxe.disabled = true
+	tool_pickaxe.focus_mode = Control.FOCUS_NONE
+	
+	tool_scythe.disabled = true
+	tool_scythe.focus_mode = Control.FOCUS_NONE
+	
+	corn.disabled = true
+	corn.focus_mode = Control.FOCUS_NONE
+	
+	tomato.disabled = true
+	tomato.focus_mode = Control.FOCUS_NONE
 	# 1. Connect all buttons to their click functions programmatically
 	tool_axe.pressed.connect(_on_axe_pressed)
 	tool_tilling.pressed.connect(_on_tilling_pressed)
@@ -94,3 +115,24 @@ func _unhandled_input(event: InputEvent) -> void:
 			corn.release_focus()
 			tomato.release_focus()
 			
+
+func on_enable_tool_button(tool: DataTypes.Tools) -> void:
+	if tool == DataTypes.Tools.TillGround:
+		tool_tilling.disabled = false
+		tool_tilling.focus_mode = Control.FOCUS_ALL
+	elif tool == DataTypes.Tools.Scythe:
+		tool_scythe.disabled = false
+		tool_scythe.focus_mode = Control.FOCUS_ALL
+	elif tool == DataTypes.Tools.Pickaxe:
+		tool_pickaxe.disabled = false
+		tool_pickaxe.focus_mode = Control.FOCUS_ALL
+	elif tool == DataTypes.Tools.WaterCrops:
+		tool_watering.disabled = false
+		tool_watering.focus_mode = Control.FOCUS_ALL
+	elif tool == DataTypes.Tools.PlantCorn:
+		corn.disabled = false
+		corn.focus_mode = Control.FOCUS_ALL
+	elif tool == DataTypes.Tools.PlantTomato:
+		tomato.disabled = false
+		tomato.focus_mode = Control.FOCUS_ALL
+	

@@ -1,0 +1,13 @@
+~ start
+Nyan: [[Hi|Hello|Howdy]], nice to meet you.
+Nyan: Welcome to your new farm.
+Nyan: As you can see the cows and chickens are hungry.
+Nyan: You need to grow some crops to feed them.
+Nyan: Here are some seeds to grow some crops.
+- Take crop seeds
+	Teemo: Yeah I can grow crops.
+	do GameDialogueManager.action_give_crop_seeds()
+- No, I don't want them
+	Teemo: I'm not ready to grow my farm yet.
+
+=> END
