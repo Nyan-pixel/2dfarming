@@ -1,6 +1,6 @@
 extends Node2D
 
-#var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tsn")
+var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tsn")
 
 var corn_harvest_scene = preload("res://scene/objects/plants/corn_harvest.tscn")
 var tomato_harvest_scene = preload("res://scene/objects/plants/tomato_harvest.tscn")
@@ -14,7 +14,7 @@ var tomato_harvest_scene = preload("res://scene/objects/plants/tomato_harvest.ts
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var feed_component: FeedComponent = $FeedComponent
 @onready var reward_marker: Marker2D = $RewardMarker
-#InteractableLabelComponent
+@onready var interactable_label_component: Control = $InteractableLabelComponent
 var in_range: bool
 var is_chest_open: bool
 
@@ -25,7 +25,7 @@ func _ready() -> void:
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
 
 func on_interactable_activated() -> void:
-	#interactable_label_component.show()
+	interactable_label_component.show()
 	in_range = true
 
 
@@ -34,7 +34,7 @@ func on_interactable_deactivated() -> void:
 		animated_sprite_2d.play("chest_close")
 	
 	is_chest_open = false
-	#interactable_label_component.hide()
+	interactable_label_component.hide()
 	in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -65,3 +65,13 @@ func trigger_feed_harvest(inventory_item:String, scene: Resource) -> void:
 	for index in inventory_item_count:
 		var harvest_instance = scene.instantiate() as Node2D
 		harvest_instance.global_position = Vector2(global_position.x, global_position.y - food_drop_height)
+		get_tree().root.add_child(harvest_instance)
+		var target_position = global_position
+		
+		var time_delay = randf_range(0.5, 2.0)
+		await get_tree().create_timer(time_delay).timeout
+		
+		var tween = get_tree().create_tween()
+		tween.tween_property(harvest_instance, "position", target_position, 1.0)
+		tween.tween_property(harvest_instance, "scale", Vector2(0.5, 0.5), 1.0)
+		tween.tween_callback(harvest_instance.queue_free)
