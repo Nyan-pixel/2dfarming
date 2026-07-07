@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkrx2ukwf1lj5"
-path="res://.godot/imported/Tilemap_color1.png-e8f46245702d416b888c2c561796e658.ctex"
+uid="uid://uq3utpp47u0n"
+path="res://.godot/imported/npc1.png-2423772986e9f66fcf64c27c1fd56995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Tilesets/Tilemap_color1.png"
-dest_files=["res://.godot/imported/Tilemap_color1.png-e8f46245702d416b888c2c561796e658.ctex"]
+source_file="res://assets/game/Characters/npc1.png"
+dest_files=["res://.godot/imported/npc1.png-2423772986e9f66fcf64c27c1fd56995.ctex"]
 
 [params]
 
