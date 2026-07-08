@@ -111,7 +111,6 @@ script = ExtResource("1_n47v3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tb21g")
-animation = &"chest_close"
 
 [node name="InteractableComponent" parent="." instance=ExtResource("2_aas56")]
 
@@ -130,6 +129,5 @@ position = Vector2(13, 14)
 [node name="FeedComponent" parent="." instance=ExtResource("4_y0rvt")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
-position = Vector2(13, 14)
 shape = SubResource("CircleShape2D_51syw")
 debug_color = Color(0.6891568, 0.49624872, 0.14262447, 0.41960785)

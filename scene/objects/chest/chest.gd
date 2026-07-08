@@ -15,6 +15,7 @@ var tomato_harvest_scene = preload("res://scene/objects/plants/tomato_harvest.ts
 @onready var feed_component: FeedComponent = $FeedComponent
 @onready var reward_marker: Marker2D = $RewardMarker
 @onready var interactable_label_component: Control = $InteractableLabelComponent
+
 var in_range: bool
 var is_chest_open: bool
 
@@ -39,7 +40,7 @@ func on_interactable_deactivated() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if in_range:
-		if event.is_action_pressed("show-dialogue"):
+		if event.is_action_pressed("show_dialogue"):
 			interactable_label_component.hide()
 			animated_sprite_2d.play("chest_open")
 			is_chest_open = true
@@ -47,7 +48,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			#create some dialogue
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().current_scene.add_child(balloon)
-			balloon.start(load("res://dialogue/conversation/chest.dialogue"),dialogue_start_command)
+			balloon.start(load("res://Dialog/Conversation/chest.dialogue"),dialogue_start_command)
 			#need to do some codes tutorial 7:05
 
 func on_feed_the_animals() -> void:

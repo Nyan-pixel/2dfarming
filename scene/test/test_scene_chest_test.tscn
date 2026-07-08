@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://eg14o7fh7xdu"]
+[gd_scene load_steps=15 format=4 uid="uid://eg14o7fh7xdu"]
 
 [ext_resource type="TileSet" uid="uid://dhheyesq1lvuw" path="res://tilesets/gametilesets.tres" id="1_vnh75"]
 [ext_resource type="Texture2D" uid="uid://coqv7ggy8jmxj" path="res://assets/game/Objects/Basic_Plants.png" id="2_2f66t"]
 [ext_resource type="Texture2D" uid="uid://d4l8egee36lli" path="res://assets/game/Objects/Basic_Grass_Biom_things.png" id="3_864xq"]
 [ext_resource type="Texture2D" uid="uid://dq1jnl4ha35sb" path="res://assets/game/Tilesets/Fences.png" id="4_be7tm"]
+[ext_resource type="PackedScene" uid="uid://bfmx3vileieam" path="res://scene/objects/plants/corn_harvest.tscn" id="5_4u6xx"]
 [ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="5_5b7kv"]
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="6_icekr"]
+[ext_resource type="PackedScene" uid="uid://cnycwk4stlfnv" path="res://scene/objects/plants/tomato_harvest.tscn" id="6_x7rfa"]
 [ext_resource type="PackedScene" uid="uid://bwxy2wsdkyde5" path="res://scene/objects/chest/chest.tscn" id="7_n5elt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1t3w"]
@@ -87,14 +89,42 @@ tile_set = SubResource("TileSet_oa3m5")
 tile_map_data = PackedByteArray("AAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAABAAAAAAAQAAQAAAAAAAAAAAARAAQAAAABAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAEAAAARAAIAAAAAAAAAAAARAAMAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_41f04")
 
+[node name="HarvestCollectable" type="Node2D" parent="."]
+
+[node name="CornHarvest" parent="HarvestCollectable" instance=ExtResource("5_4u6xx")]
+position = Vector2(84, 230)
+
+[node name="CornHarvest2" parent="HarvestCollectable" instance=ExtResource("5_4u6xx")]
+position = Vector2(143, 207)
+
+[node name="CornHarvest3" parent="HarvestCollectable" instance=ExtResource("5_4u6xx")]
+position = Vector2(122, 241)
+
+[node name="TomatoHarvest" parent="HarvestCollectable" instance=ExtResource("6_x7rfa")]
+position = Vector2(73, 166)
+
+[node name="TomatoHarvest2" parent="HarvestCollectable" instance=ExtResource("6_x7rfa")]
+position = Vector2(58, 114)
+
+[node name="TomatoHarvest3" parent="HarvestCollectable" instance=ExtResource("6_x7rfa")]
+position = Vector2(102, 184)
+
+[node name="TomatoHarvest4" parent="HarvestCollectable" instance=ExtResource("6_x7rfa")]
+position = Vector2(171, 171)
+
+[node name="CornHarvest4" parent="HarvestCollectable" instance=ExtResource("5_4u6xx")]
+position = Vector2(167, 240)
+
+[node name="CowPastureBox" parent="." instance=ExtResource("7_n5elt")]
+position = Vector2(154, 100)
+dialogue_start_command = "start_cow_pasture_box"
+
+[node name="ChickenPastureBox" parent="." instance=ExtResource("7_n5elt")]
+position = Vector2(254, 107)
+dialogue_start_command = "start_chicken_pasture_box"
+
 [node name="Player" parent="." instance=ExtResource("5_5b7kv")]
 position = Vector2(126, 168)
 current_tool = 3
 
 [node name="GameScreen" parent="." instance=ExtResource("6_icekr")]
-
-[node name="CowPastureBox" parent="." instance=ExtResource("7_n5elt")]
-position = Vector2(154, 100)
-
-[node name="ChickenPastureBox" parent="." instance=ExtResource("7_n5elt")]
-position = Vector2(254, 107)
