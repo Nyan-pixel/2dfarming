@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwxy2wsdkyde5"]
+[gd_scene load_steps=21 format=3 uid="uid://bwxy2wsdkyde5"]
 
 [ext_resource type="Texture2D" uid="uid://bni81qg40j34y" path="res://assets/game/Objects/Chest.png" id="1_ghcwf"]
 [ext_resource type="Script" uid="uid://1ewhp2m654bg" path="res://scene/objects/chest/chest.gd" id="1_n47v3"]
 [ext_resource type="PackedScene" uid="uid://cv3tlgmwisqki" path="res://scene/components/interactable_component.tscn" id="2_aas56"]
 [ext_resource type="PackedScene" uid="uid://dtg2w66i1vtib" path="res://scene/components/interactable_label_component.tscn" id="4_51syw"]
 [ext_resource type="PackedScene" uid="uid://c6gbq3fylav05" path="res://scene/components/feed_component.tscn" id="4_y0rvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0rvt"]
+size = Vector2(14, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aas56"]
 atlas = ExtResource("1_ghcwf")
@@ -106,8 +109,12 @@ radius = 17.029387
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51syw"]
 
-[node name="Chest" type="Node2D"]
+[node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_n47v3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_y0rvt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tb21g")
@@ -118,10 +125,10 @@ sprite_frames = SubResource("SpriteFrames_tb21g")
 shape = SubResource("CircleShape2D_aas56")
 
 [node name="InteractableLabelComponent" parent="." instance=ExtResource("4_51syw")]
-offset_left = -29.0
-offset_top = -24.0
-offset_right = -19.0
-offset_bottom = -14.0
+offset_left = -28.0
+offset_top = -23.0
+offset_right = -18.0
+offset_bottom = -13.0
 
 [node name="RewardMarker" type="Marker2D" parent="."]
 position = Vector2(13, 14)
