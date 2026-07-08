@@ -1,0 +1,19 @@
+~ start_cow_pasture_box
+
+Pasture Box:[[Hi|Hello|Howdy]], your animals are hungry.
+Pasture Box: Would you like to feed your cow?
+- Yes
+  Marlow: Yeah! Lets feed my cows.
+- No
+  Marlow: No, I don't need to feed them.
+=> END
+
+~ start_chicken_pasture_box
+
+Pasture Box:[[Hi|Hello|Howdy]], your animals are hungry.
+Pasture Box: Would you like to feed your chickens?
+- Yes
+  Marlow: Yeah! Lets feed them.
+- No
+  Marlow: No, I don't need to feed them.
+=> END

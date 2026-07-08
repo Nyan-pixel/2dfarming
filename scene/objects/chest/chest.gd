@@ -1,6 +1,6 @@
 extends Node2D
 
-var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tsn")
+var balloon_scene = preload("res://Dialog/game_dialogue_balloon.tscn")
 
 var corn_harvest_scene = preload("res://scene/objects/plants/corn_harvest.tscn")
 var tomato_harvest_scene = preload("res://scene/objects/plants/tomato_harvest.tscn")
@@ -21,7 +21,7 @@ var is_chest_open: bool
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
-	#interactable_label_component.hide()
+	interactable_label_component.hide()
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
 
 func on_interactable_activated() -> void:
