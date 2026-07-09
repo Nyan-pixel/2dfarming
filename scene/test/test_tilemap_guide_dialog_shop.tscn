@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://cndg1ve1ggp10"]
+[gd_scene load_steps=74 format=4 uid="uid://cndg1ve1ggp10"]
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_fdf7g"]
 [ext_resource type="Texture2D" uid="uid://cqe2tosf7emuo" path="res://assets/game/Tilesets/Water Foam.png" id="2_egi22"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://1dkjt1xi1b1k" path="res://scene/characters/cow/cow.tscn" id="29_smuto"]
 [ext_resource type="PackedScene" uid="uid://cg5jte5gcuvim" path="res://scene/progress/player_hud.tscn" id="30_jnha1"]
 [ext_resource type="PackedScene" uid="uid://b7hedi0atmi4m" path="res://scene/objects/chest/seedshop.tscn" id="31_egi22"]
+[ext_resource type="PackedScene" uid="uid://dnd41d0l7r5bq" path="res://scene/progress/game_notification.tscn" id="32_i2cep"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fimq1"]
 texture = ExtResource("1_fdf7g")
@@ -1083,3 +1084,5 @@ position = Vector2(472, 312)
 [node name="SeedShop" parent="." instance=ExtResource("31_egi22")]
 position = Vector2(405, 108)
 dialogue_start_command = "start_shop"
+
+[node name="GameNotification" parent="." instance=ExtResource("32_i2cep")]
