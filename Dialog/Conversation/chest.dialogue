@@ -21,7 +21,7 @@ Pasture Box: Would you like to feed your chickens?
 => END
 
 ~ start_shop
-Shopkeeper: Welcome! Are you looking to buy some fresh seeds, or are you looking to sell your harvested resources?
+Shopkeeper: Welcome! Are you looking to buy some fresh seeds, or are you looking to sell your harvested goods?
 - Open Buying Shop
 	=> buy_menu
 - Open Selling Shop
@@ -39,11 +39,13 @@ Shopkeeper: What seeds do you need?
 			Shopkeeper: Excellent! Added to your tool panel.
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
+		=> start_shop
 	- Buy 10 Corn Seeds (250 Gold)
 		if InventoryManager.current_shop != null and InventoryManager.current_shop.buy_seeds("corn_seeds", DataTypes.Tools.PlantCorn, 25, 10):
 			Shopkeeper: Splendid! 10 Corn Seeds added to your tool panel.
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
+		=> start_shop
 	- Go Back
 		=> buy_menu
 
@@ -54,11 +56,13 @@ Shopkeeper: What seeds do you need?
 			Shopkeeper: There you go! Ready for tilling.
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
+		=> start_shop
 	- Buy 10 Tomato Seeds (300 Gold)
 		if InventoryManager.current_shop != null and InventoryManager.current_shop.buy_seeds("tomato_seeds", DataTypes.Tools.PlantTomato, 30, 10):
 			Shopkeeper: Double checks out! 10 Tomato Seeds added.
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
+		=> start_shop
 	- Go Back
 		=> buy_menu
 
@@ -66,21 +70,34 @@ Shopkeeper: What seeds do you need?
 	=> start_shop
 
 ~ sell_menu
-Shopkeeper: I'm buying raw resources today. What are you looking to unload?
+Shopkeeper: I'm buying all kinds of farm goods today. What are you looking to unload?
+- Sell Raw Resources (Log / Stone)
+	=> sell_resources
+- Sell Harvested Crops (Corn / Tomato)
+	=> sell_crops
+- Sell Animal Products (Milk / Egg)
+	=> sell_animals
+- Back to Main Menu
+	=> start_shop
+
+~ sell_resources
+Shopkeeper: Looking to unload some materials?
 - Sell Logs (Gets 10 Gold each)
 	Shopkeeper: How many Logs do you want to sell?
-	- Sell 1 log (+10 Gold)
+	- Sell 1 Log (+10 Gold)
 		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("log", 10, 1):
 			Shopkeeper: Perfect, thank you for the wood!
 		else:
 			Shopkeeper: You don't have enough Logs in your inventory!
+		=> start_shop
 	- Sell 10 Logs (+100 Gold)
 		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("log", 10, 10):
 			Shopkeeper: Great haul! Here is your gold.
 		else:
 			Shopkeeper: You don't have enough Logs in your inventory!
+		=> start_shop
 	- Go Back
-		=> sell_menu
+		=> sell_resources
 
 - Sell Stone (Gets 12 Gold each)
 	Shopkeeper: How much Stone do you want to sell?
@@ -89,13 +106,93 @@ Shopkeeper: I'm buying raw resources today. What are you looking to unload?
 			Shopkeeper: Thanks! Hard rock is always useful.
 		else:
 			Shopkeeper: You don't have enough Stone in your inventory!
+		=> start_shop
 	- Sell 10 Stone (+120 Gold)
 		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("stone", 12, 10):
 			Shopkeeper: Fantastic! This will make a sturdy foundation.
 		else:
 			Shopkeeper: You don't have enough Stone in your inventory!
+		=> start_shop
 	- Go Back
-		=> sell_menu
+		=> sell_resources
 
-- Back to Main Menu
-	=> start_shop
+- Go Back
+	=> sell_menu
+
+~ sell_crops
+Shopkeeper: Fresh out of the fields, eh? Let me see what you've got.
+- Sell Corn (Gets 40 Gold each)
+	Shopkeeper: How much Corn do you want to sell?
+	- Sell 1 Corn (+40 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("corn", 40, 1):
+			Shopkeeper: Sweet corn! The town will love this.
+		else:
+			Shopkeeper: You don't have enough Corn in your inventory!
+		=> start_shop
+	- Sell 10 Corn (+400 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("corn", 40, 10):
+			Shopkeeper: Awesome bundle! Here is your gold.
+		else:
+			Shopkeeper: You don't have enough Corn in your inventory!
+		=> start_shop
+	- Go Back
+		=> sell_crops
+
+- Sell Tomato (Gets 50 Gold each)
+	Shopkeeper: How many Tomatoes do you want to sell?
+	- Sell 1 Tomato (+50 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("tomato", 50, 1):
+			Shopkeeper: Nice and ripe! Thanks.
+		else:
+			Shopkeeper: You don't have enough Tomatoes in your inventory!
+		=> start_shop
+	- Sell 10 Tomatoes (+500 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("tomato", 50, 10):
+			Shopkeeper: Perfect shipment. Here is your payment!
+		else:
+			Shopkeeper: You don't have enough Tomatoes in your inventory!
+		=> start_shop
+	- Go Back
+		=> sell_crops
+
+- Go Back
+	=> sell_menu
+
+~ sell_animals
+Shopkeeper: Ah, fresh products straight from your barn!
+- Sell Milk (Gets 60 Gold each)
+	Shopkeeper: How much Milk do you want to sell?
+	- Sell 1 Milk (+60 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("milk", 60, 1):
+			Shopkeeper: Fresh milk! Perfect.
+		else:
+			Shopkeeper: You don't have enough Milk in your inventory!
+		=> start_shop
+	- Sell 10 Milk (+600 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("milk", 60, 10):
+			Shopkeeper: Splendid dairy haul! Here is your money.
+		else:
+			Shopkeeper: You don't have enough Milk in your inventory!
+		=> start_shop
+	- Go Back
+		=> sell_animals
+
+- Sell Egg (Gets 20 Gold each)
+	Shopkeeper: How many Eggs do you want to sell?
+	- Sell 1 Egg (+20 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("egg", 20, 1):
+			Shopkeeper: Great, a nice farm-fresh egg.
+		else:
+			Shopkeeper: You don't have enough Eggs in your inventory!
+		=> start_shop
+	- Sell 10 Eggs (+200 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("egg", 20, 10):
+			Shopkeeper: A whole carton! Thank you.
+		else:
+			Shopkeeper: You don't have enough Eggs in your inventory!
+		=> start_shop
+	- Go Back
+		=> sell_animals
+
+- Go Back
+	=> sell_menu

@@ -5,7 +5,7 @@ var balloon_scene = preload("res://Dialog/game_dialogue_balloon.tscn")
 @export var dialogue_start_command: String = "start"
 
 @onready var interactable_component: InteractableComponent = $InteractableComponent
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $chest
 @onready var interactable_label_component: Control = $InteractableLabelComponent
 
 var in_range: bool
