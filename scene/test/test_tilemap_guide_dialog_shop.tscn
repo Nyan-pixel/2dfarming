@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://cndg1ve1ggp10"]
+[gd_scene load_steps=75 format=4 uid="uid://cndg1ve1ggp10"]
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_fdf7g"]
 [ext_resource type="Texture2D" uid="uid://cqe2tosf7emuo" path="res://assets/game/Tilesets/Water Foam.png" id="2_egi22"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://4u1ibhxk6vgd" path="res://scene/components/crop_cursor_component.tscn" id="23_6i3b8"]
 [ext_resource type="Script" uid="uid://encln1my7qx3" path="res://scene/components/crop_cursor_component.gd" id="24_c8jb2"]
 [ext_resource type="PackedScene" uid="uid://baobhkkvmt1nd" path="res://scene/characters/player/player.tscn" id="25_2dg2b"]
+[ext_resource type="Script" uid="uid://cmaf3n4ahyef6" path="res://scene/test/camera_2d.gd" id="26_01bb7"]
 [ext_resource type="PackedScene" uid="uid://dqkphh5iahe3s" path="res://scene/ui/game_screen.tscn" id="26_u54w2"]
 [ext_resource type="PackedScene" uid="uid://b6dt06p3lh2cs" path="res://scene/components/day_and_night_cycle_component.tscn" id="27_uisi5"]
 [ext_resource type="PackedScene" uid="uid://230kmok5s7ft" path="res://scene/characters/chicken/chicken.tscn" id="28_vq1n4"]
@@ -1028,6 +1029,7 @@ tilled_soil_tilemap_layer = NodePath("../Tilemap/TilledSoil")
 position = Vector2(304, 206)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+script = ExtResource("26_01bb7")
 
 [node name="choptree" type="TileMapLayer" parent="."]
 y_sort_enabled = true
