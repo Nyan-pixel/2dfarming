@@ -39,32 +39,47 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 			is_shop_open = true
 			
-			# Set this specific instance as the active shop
 			InventoryManager.current_shop = self
 			
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().current_scene.add_child(balloon)
 			balloon.start(load("res://Dialog/Conversation/chest.dialogue"), dialogue_start_command)
 
-### ─── SEED SHOP TRANSACTION SYSTEM ─── ###
+### ─── BUYING SYSTEM ─── ###
 
 func buy_seeds(seed_type: String, tool_enum_value: DataTypes.Tools, single_cost: int, amount: int) -> bool:
 	var total_cost = single_cost * amount
 	
-	# Spend gold using your PlayerProgress Autoload
 	if not PlayerProgressManager.spend_gold(total_cost):
-		print("Not enough gold!")
 		return false
 	
-	# Add items to inventory dictionary
 	if InventoryManager.inventory.has(seed_type):
 		InventoryManager.inventory[seed_type] += amount
 	else:
 		InventoryManager.inventory[seed_type] = amount
 		
-	# Unlock the hotbar slot buttons
 	ToolManager.enable_tool.emit(tool_enum_value)
+	InventoryManager.inventory_changed.emit()
+	return true
+
+
+### ─── SELLING SYSTEM (NEW) ─── ###
+
+func sell_item(item_type: String, item_earnings: int, amount: int) -> bool:
+	var inventory: Dictionary = InventoryManager.inventory
 	
-	# Refresh UI panel tracking labels
+	# Check if player actually has enough items to sell
+	if not inventory.has(item_type) or inventory[item_type] < amount:
+		print("Not enough items to sell!")
+		return false
+		
+	# Deduct the items
+	inventory[item_type] -= amount
+	
+	# Give gold to the player
+	var total_payout = item_earnings * amount
+	PlayerProgressManager.add_gold(total_payout)
+	
+	# Tell your inventory UI panels to refresh immediately
 	InventoryManager.inventory_changed.emit()
 	return true

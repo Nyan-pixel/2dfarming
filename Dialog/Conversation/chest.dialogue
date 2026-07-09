@@ -21,7 +21,17 @@ Pasture Box: Would you like to feed your chickens?
 => END
 
 ~ start_shop
-Shopkeeper: Looking for crops to plant? I only carry the finest seeds. What do you need?
+Shopkeeper: Welcome! Are you looking to buy some fresh seeds, or are you looking to sell your harvested resources?
+- Open Buying Shop
+	=> buy_menu
+- Open Selling Shop
+	=> sell_menu
+- Leave
+	Shopkeeper: Happy farming!
+=> END
+
+~ buy_menu
+Shopkeeper: What seeds do you need?
 - Buy Corn Seeds (25 Gold each)
 	Shopkeeper: How many Corn Seeds would you like?
 	- Buy 1 Corn Seed (25 Gold)
@@ -35,7 +45,7 @@ Shopkeeper: Looking for crops to plant? I only carry the finest seeds. What do y
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
 	- Go Back
-		=> start_shop
+		=> buy_menu
 
 - Buy Tomato Seeds (30 Gold each)
 	Shopkeeper: How many Tomato Seeds would you like?
@@ -50,8 +60,42 @@ Shopkeeper: Looking for crops to plant? I only carry the finest seeds. What do y
 		else:
 			Shopkeeper: Sorry, you don't have enough gold!
 	- Go Back
-		=> start_shop
+		=> buy_menu
 
-- Leave
-	Shopkeeper: Happy farming!
-=> END
+- Back to Main Menu
+	=> start_shop
+
+~ sell_menu
+Shopkeeper: I'm buying raw resources today. What are you looking to unload?
+- Sell Logs (Gets 10 Gold each)
+	Shopkeeper: How many Logs do you want to sell?
+	- Sell 1 log (+10 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("log", 10, 1):
+			Shopkeeper: Perfect, thank you for the wood!
+		else:
+			Shopkeeper: You don't have enough Logs in your inventory!
+	- Sell 10 Logs (+100 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("log", 10, 10):
+			Shopkeeper: Great haul! Here is your gold.
+		else:
+			Shopkeeper: You don't have enough Logs in your inventory!
+	- Go Back
+		=> sell_menu
+
+- Sell Stone (Gets 12 Gold each)
+	Shopkeeper: How much Stone do you want to sell?
+	- Sell 1 Stone (+12 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("stone", 12, 1):
+			Shopkeeper: Thanks! Hard rock is always useful.
+		else:
+			Shopkeeper: You don't have enough Stone in your inventory!
+	- Sell 10 Stone (+120 Gold)
+		if InventoryManager.current_shop != null and InventoryManager.current_shop.sell_item("stone", 12, 10):
+			Shopkeeper: Fantastic! This will make a sturdy foundation.
+		else:
+			Shopkeeper: You don't have enough Stone in your inventory!
+	- Go Back
+		=> sell_menu
+
+- Back to Main Menu
+	=> start_shop
