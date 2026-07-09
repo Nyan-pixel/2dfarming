@@ -880,9 +880,9 @@ terrain_set_0/terrain_0/color = Color(0.685178, 0.157576, 0.189384, 1)
 sources/0 = SubResource("TileSetAtlasSource_r4ldt")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_63asn"]
-vertices = PackedVector2Array(531, 202.35156, 440.27344, 196.67969, 443.89063, 168.27344, 531, 160.88281)
+vertices = PackedVector2Array(531, 202.67188, 427.8125, 199.3125, 427.1797, 166.42969, 531, 160.57031)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(435, 159, 541, 150, 541, 213, 429, 206)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(417, 157, 541, 150, 541, 213, 418, 209)])
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_x4mro"]
