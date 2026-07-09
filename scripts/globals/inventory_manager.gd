@@ -1,5 +1,5 @@
 extends Node
-
+var current_shop:Node2D = null
 var inventory: Dictionary = Dictionary()
 
 signal inventory_changed
