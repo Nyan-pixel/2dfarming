@@ -15,6 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 		InventoryManager.add_collectable(collectable_name)
 
 		PlayerProgressManager.award_crop_exp(collectable_name)
+		
+		var exp = PlayerProgressManager.crop_exp.get(collectable_name, 0)
 
 		print("Collected:", collectable_name)
 		get_parent().queue_free()

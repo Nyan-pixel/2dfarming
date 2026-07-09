@@ -7,7 +7,7 @@ signal player_level_up(level: int)
 
 var player_level: int = 1
 var current_exp: int = 0
-var required_exp: int = 100
+var required_exp: int = 10
 var gold: int = 0
 
 var crop_exp = {
@@ -30,6 +30,8 @@ func add_exp(amount: int) -> void:
 
 		level_changed.emit(player_level)
 		player_level_up.emit(player_level)
+		
+		NotificationManager.show_level(player_level)
 
 	exp_changed.emit(current_exp, required_exp)
 
