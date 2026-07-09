@@ -19,8 +19,12 @@ func _ready() -> void:
 	ToolManager.enable_tool.connect(on_enable_tool_button)
 	InventoryManager.inventory_changed.connect(on_inventory_changed)
 	
+<<<<<<< Updated upstream
 	# Initial lock states for progression tools
 	tool_tilling.disabled = true
+=======
+	tool_tilling.disabled = false
+>>>>>>> Stashed changes
 	tool_tilling.focus_mode = Control.FOCUS_NONE
 	tool_watering.disabled = true
 	tool_watering.focus_mode = Control.FOCUS_NONE
