@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=76 format=4 uid="uid://bvkwg4jgnkmuf"]
+=======
+[gd_scene load_steps=77 format=4 uid="uid://bvkwg4jgnkmuf"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dibl8w1txfm4" path="res://assets/game/Tilesets/Water.png" id="1_hjlx7"]
 [ext_resource type="Texture2D" uid="uid://cqe2tosf7emuo" path="res://assets/game/Tilesets/Water Foam.png" id="2_nfyy7"]
@@ -19,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://d31yuhb1dbkja" path="res://assets/game/Objects/Tree4.png" id="17_8iacd"]
 [ext_resource type="Texture2D" uid="uid://dq1jnl4ha35sb" path="res://assets/game/Tilesets/Fences.png" id="18_uhfq1"]
 [ext_resource type="TileSet" uid="uid://dhheyesq1lvuw" path="res://tilesets/gametilesets.tres" id="19_7hcqr"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://j824fxn1cohe" path="res://scene/characters/guide/guide.tscn" id="20_wk4d7"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cvfugxxni6yaj" path="res://scene/components/field_cursor_component.tscn" id="21_a38x2"]
 [ext_resource type="Script" uid="uid://dmr175av1oqch" path="res://scene/components/field_cursor_component.gd" id="22_1du0l"]
 [ext_resource type="PackedScene" uid="uid://bitwqob65vm4g" path="res://scene/components/save_data_component.tscn" id="23_ht70e"]
@@ -1019,6 +1027,12 @@ tile_set = SubResource("TileSet_x0c08")
 [node name="TilledSoil" type="TileMapLayer" parent="Tilemap"]
 tile_set = ExtResource("19_7hcqr")
 
+<<<<<<< Updated upstream
+=======
+[node name="guide" parent="." instance=ExtResource("20_wk4d7")]
+position = Vector2(327, 154)
+
+>>>>>>> Stashed changes
 [node name="CropFields" type="Node2D" parent="."]
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("21_a38x2")]

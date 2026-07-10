@@ -3,8 +3,11 @@ extends Node
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("save_game"):
 		save_game()
+<<<<<<< Updated upstream
 	if event.is_action_pressed("load_game"):
 		load_game()
+=======
+>>>>>>> Stashed changes
 
 
 func save_game() -> void:

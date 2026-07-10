@@ -30,13 +30,17 @@ func save_game() -> void:
 	
 	save_node_data()
 	
+<<<<<<< Updated upstream
 	game_data_resource.level_scene_path = get_tree().current_scene.scene_file_path
 	ResourceSaver.save(game_data_resource, save_game_data_path)
 	
+=======
+>>>>>>> Stashed changes
 	var result: int = ResourceSaver.save(game_data_resource, save_game_data_path + level_save_file_name)
 	print("Save result:", result)
 
 
+<<<<<<< Updated upstream
 func load_game():
 	var level_save_file_name := save_file_name % level_scene_name
 	var save_path := save_game_data_path + level_save_file_name
@@ -47,5 +51,25 @@ func load_game():
 		push_error("Save file not found: " + save_path)
 		return
 
+=======
+func load_game() -> void:
+	var level_save_file_name: String = save_file_name % level_scene_name
+	var save_game_path: String = save_game_data_path + level_save_file_name
+	
+	if !FileAccess.file_exists(save_game_path):
+		return
+		
+	game_data_resource = ResourceLoader.load(save_game_path)
+	
+	if game_data_resource == null:
+		return
+		
+	var root_node: Window = get_tree().root
+	
+	for resource in game_data_resource.save_data_nodes:
+		if resource is Resource:
+			if resource is NodeDataResource:
+				resource._load_data(root_node)
+>>>>>>> Stashed changes
 	
 	
